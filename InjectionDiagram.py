@@ -9,20 +9,50 @@ from pydm import Display
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QDialog, QApplication, QWidget
 from PyQt5.QtGui import QDoubleValidator, QValidator
-from pydm.widgets import PyDMEmbeddedDisplay
+from pydm.widgets import PyDMEmbeddedDisplay, PyDMShellCommand
 from pydm.utilities import connection
 
 class Injection_diagram(Display):
     def __init__(self, parent=None, args=None, macros=None):
         super(Injection_diagram, self).__init__(parent=parent, args=args, macros=macros)
-        self.INJ_MP1_MR1.clicked.connect(self.gotocontrol)#that is use as Expert Screen
-        self.expertscreen.clicked.connect(self.gotoexpert)# func tool partial
-        self.expertscreen_2.clicked.connect(self.gotoexpert)
-        self.expertscreen_3.clicked.connect(self.gotoexpert)
-        self.BlockPump.clicked.connect(self.gotopump)
-        self.BlockATM.clicked.connect(self.gotoatm)
-        self.out.clicked.connect(self.goout)
-        #self.embeddedControl.embedded_widget.ui.tip_mm.clicked.connect(self.gotoexpert)
+        self.ui.INJ_MP1_MR1.clicked.connect(self.gotocontrol)#that is use as Expert Screen
+        self.ui.expertscreen.clicked.connect(self.gotoexpert)# func tool partial
+        self.ui.expertscreen_2.clicked.connect(self.gotoexpert)
+        self.ui.BlockPump.clicked.connect(self.gotopump)
+        self.ui.BlockATM.clicked.connect(self.gotoatm)
+        self.ui.out.clicked.connect(self.goout)
+        #print(self.ui.embeddedControl.__dict__)
+        self.ui.embeddedControl.embedded_widget.tip_mm.clicked.connect(self.emb_tip_mm)
+        self.ui.embeddedControl.embedded_widget.tip_m.clicked.connect(self.emb_tip_m)
+        self.ui.embeddedControl.embedded_widget.tip_p.clicked.connect(self.emb_tip_p)
+        self.ui.embeddedControl.embedded_widget.tip_pp.clicked.connect(self.emb_tip_pp)
+        self.ui.embeddedControl.embedded_widget.tilt_mm.clicked.connect(self.emb_tilt_mm)
+        self.ui.embeddedControl.embedded_widget.tilt_m.clicked.connect(self.emb_tilt_m)
+        self.ui.embeddedControl.embedded_widget.tilt_p.clicked.connect(self.emb_tilt_p)
+        self.ui.embeddedControl.embedded_widget.tilt_pp.clicked.connect(self.emb_tilt_pp)
+        self.controlfile = mirrorscreen()
+        
+    def emb_tip_mm(self):
+        newnumber = self.controlfile.tip_step - self.controlfile.tip_large_step
+        if newnumber <= 0:
+            self.controlfile.tip_step = 0
+        else:
+            self.controlfile.tip_step = newnumber
+        self.controlfile.initialtip.setText(str(self.controlfile.tip_step))
+    def emb_tip_m(self):
+        print(2)
+    def emb_tip_p(self):
+        print(3)
+    def emb_tip_pp(self):
+        print(4)
+    def emb_tilt_mm(self):
+        print(5)
+    def emb_tilt_m(self):
+        print(6)
+    def emb_tilt_p(self):
+        print(7)
+    def emb_tilt_pp(self):
+        print(8)
 
     def ui_filename(self):
         return "Injection_diagram.ui"
@@ -31,9 +61,9 @@ class Injection_diagram(Display):
         return path.join(path.dirname(path.realpath(__file__)), self.ui_filename())
 
 
-    def gotoexpert(self):#(self, other)
+    def gotoexpert(self):#(self, equip_name)
         expertscreen = Expert()
-        #expertscreen.setModal(True)
+        expertscreen.setModal(True)
         expertscreen.show()
 
     def gotopump(self):
@@ -44,10 +74,10 @@ class Injection_diagram(Display):
         self.purplecamera2.penStyle = PyQt5.QtCore.Qt.PenStyle.DashLine
 
     def gotoatm(self):
-        self.INJ_DP2_MR1.setGeometry(860,230,181,41)
+        self.INJ_DP2_MR1.setGeometry(870,230,181,41)
         self.purpleVert.setGeometry(880,200,141,51)
-        self.redVert.setGeometry(951,140,20,211)
-        self.redcamera2.penStyle = PyQt5.QtCore.Qt.PenStyle.DashLine
+        self.redVert.setGeometry(951,140,20,111)
+        self.redcamera2.penStyle = PyQt5.QtCore.Qt.PenStyle.SolidLine
         self.purplecamera2.penStyle = PyQt5.QtCore.Qt.PenStyle.SolidLine
 
     def goout(self):
@@ -62,9 +92,9 @@ class Injection_diagram(Display):
 
 
     def gotocontrol(self):
-        controlfile = mirrorscreen()
-        controlfile.setModal(True)
-        controlfile.exec()
+        self.controlfile = mirrorscreen()
+        self.controlfile.setModal(True)
+        self.controlfile.exec()
         #controlfile.show()
  
 class mirrorscreen(QDialog):
