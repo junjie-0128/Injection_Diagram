@@ -30,29 +30,62 @@ class Injection_diagram(Display):
         self.ui.embeddedControl.embedded_widget.tilt_m.clicked.connect(self.emb_tilt_m)
         self.ui.embeddedControl.embedded_widget.tilt_p.clicked.connect(self.emb_tilt_p)
         self.ui.embeddedControl.embedded_widget.tilt_pp.clicked.connect(self.emb_tilt_pp)
-        self.controlfile = mirrorscreen()
+        self.ui.tip_step_size = EpicsSignalRO('LM1K2:MCS2:01:m1:STEP_COUNT', name = 'm1_step_size')
+        self.ui.tilt_step_size = EpicsSignalRO('LM1K2:MCS2:01:m2:STEP_COUNT', name = 'm2_step_size')
+        self.ui.tip_total_step = EpicsSignal('LM1K2:MCS2:01:m1:TOTAL_STEP_COUNT', write_pv = "LM1K2:MCS2:01:m1:SET_TOTAL_STEP_COUNT", name = 'tip_steps')
+        self.ui.tilt_total_step = EpicsSignal('LM1K2:MCS2:01:m2:TOTAL_STEP_COUNT', write_pv = "LM1K2:MCS2:01:m2:SET_TOTAL_STEP_COUNT", name = 'tilt_steps')
+        self.max_step_tip = 1000
+        self.max_step_tilt = 1000
+        self.INJ_DP2_MR1_pos = EpicsSignal('LM1K2:MCS2:01:m3.DRBV', write_pv = "LM1K2:MCS2:01:m3.VAL", name = 'DP2_MR1_pos')
         
     def emb_tip_mm(self):
-        newnumber = self.controlfile.tip_step - self.controlfile.tip_large_step
+        newnumber = self.ui.tip_total_step.get() - self.ui.tip_step_size.get()
         if newnumber <= 0:
-            self.controlfile.tip_step = 0
+            self.ui.tip_total_step.put(0)
         else:
-            self.controlfile.tip_step = newnumber
-        self.controlfile.initialtip.setText(str(self.controlfile.tip_step))
+            self.ui.tip_total_step.put(newnumber)
     def emb_tip_m(self):
-        print(2)
+        newnumber = self.ui.tip_total_step.get() - 1
+        if newnumber <= 0:
+            self.ui.tip_total_step.put(0)
+        else:
+            self.ui.tip_total_step.put(newnumber)
     def emb_tip_p(self):
-        print(3)
+        newnumber = self.ui.tip_total_step.get() + 1
+        if newnumber >= self.max_step_tip :
+            self.ui.tip_total_step.put(self.max_step_tip)
+        else:
+            self.ui.tip_total_step.put(newnumber)
     def emb_tip_pp(self):
-        print(4)
+        newnumber = self.ui.tip_total_step.get() + self.ui.tip_step_size.get()
+        if newnumber >= self.max_step_tip:
+            self.ui.tip_total_step.put(self.max_step_tip)
+        else:
+            self.ui.tip_total_step.put(newnumber)
     def emb_tilt_mm(self):
-        print(5)
+        newnumber = self.ui.tilt_total_step.get() - self.ui.tilt_step_size.get()
+        if newnumber <= 0:
+            self.ui.tilt_total_step.put(0)
+        else:
+            self.ui.tilt_total_step.put(newnumber)
     def emb_tilt_m(self):
-        print(6)
+        newnumber = self.ui.tilt_total_step.get() - 1
+        if newnumber <= 0:
+            self.ui.tilt_total_step.put(0)
+        else:
+            self.ui.tilt_total_step.put(newnumber)
     def emb_tilt_p(self):
-        print(7)
+        newnumber = self.ui.tilt_total_step.get() + 1
+        if newnumber >= self.max_step_tilt:
+            self.ui.tilt_total_step.put(self.max_step_tilt)
+        else:
+            self.ui.tilt_total_step.put(newnumber)
     def emb_tilt_pp(self):
-        print(8)
+        newnumber = self.ui.tilt_total_step.get() + self.ui.tilt_step_size.get()
+        if newnumber >= self.max_step_tilt:
+            self.ui.tilt_total_step.put(self.max_step_tilt)
+        else:
+            self.ui.tilt_total_step.put(newnumber)
 
     def ui_filename(self):
         return "Injection_diagram.ui"
