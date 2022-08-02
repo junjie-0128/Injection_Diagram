@@ -12,8 +12,7 @@ about Qt designer subnetwork:\
     ssh -Y pslogin\
     ssh -Y psca\
     bash\
-    source /reg/g/pcds/setup/epicsenv-cur.sh\
-    source /reg/g/pcds/setup/pcds_shortcuts.sh\
+    source /cds/group/pcds/pyps/conda/pcds_conda
     designer
     
 about Injection assembled information:\
