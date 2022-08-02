@@ -29,3 +29,15 @@ about Tyler's mirror:\
     ssh -Y las-console\
     ~tjohnson/bin/tile_test_motors.cmd
 
+about git push:\
+    ssh -Y pslogin\
+    ssh -Y psbuild-rhel7\
+    cd\
+    ls\
+    cd Injection_Diagram/\
+    ls -a\
+    git status\
+    git commit -a (commit change)\
+    git add ... (add file)\
+    git pull origin InjectionDevelopment\
+    git push origin InjectionDevelopment\
