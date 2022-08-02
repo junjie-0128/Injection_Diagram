@@ -9,20 +9,90 @@ from pydm import Display
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QDialog, QApplication, QWidget
 from PyQt5.QtGui import QDoubleValidator, QValidator
-from pydm.widgets import PyDMEmbeddedDisplay
+from pydm.widgets import PyDMEmbeddedDisplay, PyDMShellCommand
 from pydm.utilities import connection
+from ophyd import EpicsSignal, EpicsSignalRO
+"""
+    
+"""
+
 
 class Injection_diagram(Display):
     def __init__(self, parent=None, args=None, macros=None):
         super(Injection_diagram, self).__init__(parent=parent, args=args, macros=macros)
-        self.INJ_MP1_MR1.clicked.connect(self.gotocontrol)#that is use as Expert Screen
-        self.expertscreen.clicked.connect(self.gotoexpert)# func tool partial
-        self.expertscreen_2.clicked.connect(self.gotoexpert)
-        self.expertscreen_3.clicked.connect(self.gotoexpert)
-        self.BlockPump.clicked.connect(self.gotopump)
-        self.BlockATM.clicked.connect(self.gotoatm)
-        self.out.clicked.connect(self.goout)
-        #self.embeddedControl.embedded_widget.ui.tip_mm.clicked.connect(self.gotoexpert)
+        self.ui.INJ_MP1_MR1.clicked.connect(self.gotocontrol)#that is use as Expert Screen
+        self.ui.expertscreen.clicked.connect(self.gotoexpert)# func tool partial
+        self.ui.expertscreen_2.clicked.connect(self.gotoexpert)
+        self.ui.BlockPump.clicked.connect(self.gotopump)
+        self.ui.BlockATM.clicked.connect(self.gotoatm)
+        self.ui.out.clicked.connect(self.goout)
+        #print(self.ui.embeddedControl.__dict__)
+        self.ui.embeddedControl.embedded_widget.tip_mm.clicked.connect(self.emb_tip_mm)
+        self.ui.embeddedControl.embedded_widget.tip_m.clicked.connect(self.emb_tip_m)
+        self.ui.embeddedControl.embedded_widget.tip_p.clicked.connect(self.emb_tip_p)
+        self.ui.embeddedControl.embedded_widget.tip_pp.clicked.connect(self.emb_tip_pp)
+        self.ui.embeddedControl.embedded_widget.tilt_mm.clicked.connect(self.emb_tilt_mm)
+        self.ui.embeddedControl.embedded_widget.tilt_m.clicked.connect(self.emb_tilt_m)
+        self.ui.embeddedControl.embedded_widget.tilt_p.clicked.connect(self.emb_tilt_p)
+        self.ui.embeddedControl.embedded_widget.tilt_pp.clicked.connect(self.emb_tilt_pp)
+        ## have to define values from other screen
+        ## below for the testing mirror
+        self.ui.tip_step_size = EpicsSignalRO('LM1K2:MCS2:01:m1:STEP_COUNT', name = 'm1_step_size')
+        self.ui.tilt_step_size = EpicsSignalRO('LM1K2:MCS2:01:m2:STEP_COUNT', name = 'm2_step_size')
+        self.ui.tip_total_step = EpicsSignal('LM1K2:MCS2:01:m1:TOTAL_STEP_COUNT', write_pv = "LM1K2:MCS2:01:m1:SET_TOTAL_STEP_COUNT", name = 'tip_steps')
+        self.ui.tilt_total_step = EpicsSignal('LM1K2:MCS2:01:m2:TOTAL_STEP_COUNT', write_pv = "LM1K2:MCS2:01:m2:SET_TOTAL_STEP_COUNT", name = 'tilt_steps')
+        self.max_step_tip = 1000
+        self.max_step_tilt = 1000
+        self.INJ_DP2_MR1_pos = EpicsSignal('LM1K2:MCS2:01:m3.DRBV', write_pv = "LM1K2:MCS2:01:m3.VAL", name = 'DP2_MR1_pos')
+        
+    def emb_tip_mm(self):
+        newnumber = self.ui.tip_total_step.get() - self.ui.tip_step_size.get()
+        if newnumber <= 0:
+            self.ui.tip_total_step.put(0)
+        else:
+            self.ui.tip_total_step.put(newnumber)
+    def emb_tip_m(self):
+        newnumber = self.ui.tip_total_step.get() - 1
+        if newnumber <= 0:
+            self.ui.tip_total_step.put(0)
+        else:
+            self.ui.tip_total_step.put(newnumber)
+    def emb_tip_p(self):
+        newnumber = self.ui.tip_total_step.get() + 1
+        if newnumber >= self.max_step_tip :
+            self.ui.tip_total_step.put(self.max_step_tip)
+        else:
+            self.ui.tip_total_step.put(newnumber)
+    def emb_tip_pp(self):
+        newnumber = self.ui.tip_total_step.get() + self.ui.tip_step_size.get()
+        if newnumber >= self.max_step_tip:
+            self.ui.tip_total_step.put(self.max_step_tip)
+        else:
+            self.ui.tip_total_step.put(newnumber)
+    def emb_tilt_mm(self):
+        newnumber = self.ui.tilt_total_step.get() - self.ui.tilt_step_size.get()
+        if newnumber <= 0:
+            self.ui.tilt_total_step.put(0)
+        else:
+            self.ui.tilt_total_step.put(newnumber)
+    def emb_tilt_m(self):
+        newnumber = self.ui.tilt_total_step.get() - 1
+        if newnumber <= 0:
+            self.ui.tilt_total_step.put(0)
+        else:
+            self.ui.tilt_total_step.put(newnumber)
+    def emb_tilt_p(self):
+        newnumber = self.ui.tilt_total_step.get() + 1
+        if newnumber >= self.max_step_tilt:
+            self.ui.tilt_total_step.put(self.max_step_tilt)
+        else:
+            self.ui.tilt_total_step.put(newnumber)
+    def emb_tilt_pp(self):
+        newnumber = self.ui.tilt_total_step.get() + self.ui.tilt_step_size.get()
+        if newnumber >= self.max_step_tilt:
+            self.ui.tilt_total_step.put(self.max_step_tilt)
+        else:
+            self.ui.tilt_total_step.put(newnumber)
 
     def ui_filename(self):
         return "Injection_diagram.ui"
@@ -31,9 +101,9 @@ class Injection_diagram(Display):
         return path.join(path.dirname(path.realpath(__file__)), self.ui_filename())
 
 
-    def gotoexpert(self):#(self, other)
+    def gotoexpert(self):#(self, equip_name)
         expertscreen = Expert()
-        #expertscreen.setModal(True)
+        expertscreen.setModal(True)
         expertscreen.show()
 
     def gotopump(self):
@@ -42,13 +112,17 @@ class Injection_diagram(Display):
         self.redVert.setGeometry(951,140,20,121)
         self.redcamera2.penStyle = PyQt5.QtCore.Qt.PenStyle.SolidLine
         self.purplecamera2.penStyle = PyQt5.QtCore.Qt.PenStyle.DashLine
+        #new_pos = self.INJ_DP2_MR1_pos.get - 1
+        self.INJ_DP2_MR1_pos.put(2)
 
     def gotoatm(self):
-        self.INJ_DP2_MR1.setGeometry(860,230,181,41)
+        self.INJ_DP2_MR1.setGeometry(870,230,181,41)
         self.purpleVert.setGeometry(880,200,141,51)
-        self.redVert.setGeometry(951,140,20,211)
-        self.redcamera2.penStyle = PyQt5.QtCore.Qt.PenStyle.DashLine
+        self.redVert.setGeometry(951,140,20,111)
+        self.redcamera2.penStyle = PyQt5.QtCore.Qt.PenStyle.SolidLine
         self.purplecamera2.penStyle = PyQt5.QtCore.Qt.PenStyle.SolidLine
+        #new_pos = self.INJ_DP2_MR1_pos.get - 1.5
+        self.INJ_DP2_MR1_pos.put(1.5)
 
     def goout(self):
         self.INJ_DP2_MR1.setGeometry(920,230,181,41)
@@ -56,15 +130,17 @@ class Injection_diagram(Display):
         self.redVert.setGeometry(951,140,20,211)
         self.redcamera2.penStyle = PyQt5.QtCore.Qt.PenStyle.DashLine
         self.purplecamera2.penStyle = PyQt5.QtCore.Qt.PenStyle.DashLine
+        #new_pos = self.INJ_DP2_MR1_pos.get - 1
+        self.INJ_DP2_MR1_pos.put(3)
 
     def mirrortext(self):
         self.mirrorwords.setText("No number")
 
 
     def gotocontrol(self):
-        controlfile = mirrorscreen()
-        controlfile.setModal(True)
-        controlfile.exec()
+        self.controlfile = mirrorscreen()
+        self.controlfile.setModal(True)
+        self.controlfile.exec()
         #controlfile.show()
  
 class mirrorscreen(QDialog):

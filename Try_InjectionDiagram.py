@@ -22,7 +22,8 @@ class Injection_diagram(Display):
         self.ui.BlockPump.clicked.connect(self.gotopump)
         self.ui.BlockATM.clicked.connect(self.gotoatm)
         self.ui.out.clicked.connect(self.goout)
-        #self.embeddedControl.embedded_widget.ui.tip_mm.clicked.connect(self.gotoexpert)
+        #print(self.ui.embeddedControl.__dict__)
+        self.ui.embeddedControl.embedded_widget.tip_mm.clicked.connect(self.gotoexpert)
 
     def ui_filename(self):
         return "Injection_diagram.ui"
