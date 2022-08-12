@@ -11,6 +11,8 @@ from PyQt5.QtWidgets import QDialog, QApplication, QWidget
 from PyQt5.QtGui import QDoubleValidator, QValidator
 from pydm.widgets import PyDMEmbeddedDisplay
 from pydm.utilities import connection
+from ophyd import EpicsSignal, EpicsSignalRO
+
 
 class Harmonic_diagram(Display):
     def __init__(self, parent=None, args=None, macros=None):
@@ -25,22 +27,21 @@ class Harmonic_diagram(Display):
 
         self.ui.MP1_MR1_SHG_THG.clicked.connect(self.gotoMP1_MR1_SHG_THG)
         self.ui.MP1_MR1_Bypass_800.clicked.connect(self.gotoMP1_MR1_Bypass_800)
-        self.ui.MP1_MR1_expert.clicked.connect(self.gotoexpert)
-        self.ui.MP3_MR1_Bypass.clicked.connect(self.gotoMP3_MR1_Bypass)
-        self.ui.MP3_MR1_800.clicked.connect(self.gotoMP3_MR1_800)
-        self.ui.MP3_MR1_expert.clicked.connect(self.gotoexpert)
+        #self.ui.MP1_MR1_expert.clicked.connect(self.gotoexpert)#may delete later
+        
+        #self.ui.MP3_MR1_expert.clicked.connect(self.gotoexpert)#may delete later
         self.ui.MP1_SPO1_SHG.clicked.connect(self.gotoMP1_SPO1_SHG)
         self.ui.MP1_SPO1_THG.clicked.connect(self.gotoMP1_SPO1_THG)
-        self.ui.MP1_SPO1_expert.clicked.connect(self.gotoexpert)
+        #self.ui.MP1_SPO1_expert.clicked.connect(self.gotoexpert)
         #self.ui.MP1_PC1_SHG.clicked.connect(self.gotoMP1_PC1_SHG)
         #self.ui.MP1_PC1_THG.clicked.connect(self.gotoMP1_PC1_THG)
         self.ui.MP1_MR8_SHG_THG.clicked.connect(self.gotoMP1_MR8_SHG_THG)
         self.ui.MP1_MR8_Bypass.clicked.connect(self.gotoMP1_MR8_Bypass)
-        self.ui.MP1_MR8_expert.clicked.connect(self.gotoexpert)
+        #self.ui.MP1_MR8_expert.clicked.connect(self.gotoexpert)#may delete later
         self.ui.MP3_MR2_Output.clicked.connect(self.gotoMP3_MR2_Output)
         self.ui.MP3_MR2_Diag.clicked.connect(self.gotoMP3_MR2_Diag)
         self.ui.MP3_MR2_800.clicked.connect(self.gotoMP3_MR2_800)
-        self.ui.MP3_MR2_expert.clicked.connect(self.gotoexpert)
+        #self.ui.MP3_MR2_expert.clicked.connect(self.gotoexpert)#may delete later
         #########START the Embedded Buttons#############
         
         self.ui.embeddedControl_MP1_MR1.embedded_widget.tip_mm.clicked.connect(self.tip11mm)
@@ -93,347 +94,205 @@ class Harmonic_diagram(Display):
         self.ui.embeddedControl_MP1_MR8.embedded_widget.tilt_pp.clicked.connect(self.tilt18pp)
         self.ui.embeddedControl_MP3_MR2.embedded_widget.tilt_pp.clicked.connect(self.tilt32pp)
 
-        self.ui.MP1_MR1_tip_step_size = 100#EpicsSignalRO('LM1K2:MCS2:01:m1:STEP_COUNT', name = 'm1_step_size')
-        self.ui.MP1_MR1_tilt_step_size = 100#EpicsSignalRO('LM1K2:MCS2:01:m2:STEP_COUNT', name = 'm2_step_size')
-        self.ui.MP1_MR1_tip_total_step = 100#EpicsSignal('LM1K2:MCS2:01:m1:TOTAL_STEP_COUNT', write_pv = "LM1K2:MCS2:01:m1:SET_TOTAL_STEP_COUNT", name = 'tip_steps')
-        self.ui.MP1_MR1_tilt_total_step = 100#EpicsSignal('LM1K2:MCS2:01:m2:TOTAL_STEP_COUNT', write_pv = "LM1K2:MCS2:01:m2:SET_TOTAL_STEP_COUNT", name = 'tilt_steps')
-        self.MP1_MR1_max_step_tip = 1000
-        self.MP1_MR1_max_step_tilt = 1000
-        self.MP1_MR1_pos = 2#EpicsSignal('LM1K2:MCS2:01:m3.DRBV', write_pv = "LM1K2:MCS2:01:m3.VAL", name = 'DP2_MR1_pos')
+        self.MP1_SPO1_pos = EpicsSignal('LM1K4:HRM_MP1_SPO1.DRBV', write_pv = "LM1K4:HRM_MP1_SPO1.VAL", name = 'MP1_SPO1_pos')
+        self.MP1_PC1_pos = EpicsSignal('LM1K4:HRM_MP1_PC1.DRBV', write_pv = "LM1K4:HRM_MP1_PC1.VAL", name = 'MP1_PC1_pos')
+        self.MP1_PC11_PZM2_pos = EpicsSignal('LM1K4:HRM_MP1_PC1_PZM2.DRBV', write_pv = "LM1K4:HRM_MP1_PC1_PZM2.VAL", name = 'MP1_PC1_PZM2_pos')
+        
 
-        self.ui.MP3_MR1_tip_step_size = 100#EpicsSignalRO('LM1K2:MCS2:01:m1:STEP_COUNT', name = 'm1_step_size')
-        self.ui.MP3_MR1_tilt_step_size = 100#EpicsSignalRO('LM1K2:MCS2:01:m2:STEP_COUNT', name = 'm2_step_size')
-        self.ui.MP3_MR1_tip_total_step = 100#EpicsSignal('LM1K2:MCS2:01:m1:TOTAL_STEP_COUNT', write_pv = "LM1K2:MCS2:01:m1:SET_TOTAL_STEP_COUNT", name = 'tip_steps')
-        self.ui.MP3_MR1_tilt_total_step = 100#EpicsSignal('LM1K2:MCS2:01:m2:TOTAL_STEP_COUNT', write_pv = "LM1K2:MCS2:01:m2:SET_TOTAL_STEP_COUNT", name = 'tilt_steps')
-        self.MP3_MR1_max_step_tip = 1000
-        self.MP3_MR1_max_step_tilt = 1000
-        self.MP3_MR1_pos = 2#EpicsSignal('LM1K2:MCS2:01:m3.DRBV', write_pv = "LM1K2:MCS2:01:m3.VAL", name = 'DP2_MR1_pos')
+        self.ui.MP1_MR1_tip_step_size = EpicsSignalRO('LM1K4:HRM_MP1_MR1_TIP1:STEP_COUNT', name = 'MP1_MR1_tip_step_size')
+        self.ui.MP1_MR1_tilt_step_size = EpicsSignalRO('LM1K4:HRM_MP1_MR1_TILT1:STEP_COUNT', name = 'MP1_MR1_tilt_step_size')
+        self.ui.MP1_MR1_tip_total_step = EpicsSignal('LM1K4:HRM_MP1_MR1_TIP1:TOTAL_STEP_COUNT', write_pv = "LM1K4:HRM_MP1_MR1_TIP1:SET_TOTAL_STEP_COUNT", name = 'MP1_MR1_tip_steps')
+        self.ui.MP1_MR1_tilt_total_step = EpicsSignal('LM1K4:HRM_MP1_MR1_TILT1:TOTAL_STEP_COUNT', write_pv = "LM1K4:HRM_MP1_MR1_TILT1:SET_TOTAL_STEP_COUNT", name = 'MP1_MR1_tilt_steps')
+        #self.MP1_MR1_max_step_tip = 1000
+        #self.MP1_MR1_max_step_tilt = 1000
+        self.MP1_MR1_pos = EpicsSignal('LM1K4:HRM_MP1_MR1_LM1.DRBV', write_pv = "LM1K4:HRM_MP1_MR1_LM1.VAL", name = 'MP1_MR1_pos')
 
-        self.ui.MP1_MR4_tip_step_size = 100#EpicsSignalRO('LM1K2:MCS2:01:m1:STEP_COUNT', name = 'm1_step_size')
-        self.ui.MP1_MR4_tilt_step_size = 100#EpicsSignalRO('LM1K2:MCS2:01:m2:STEP_COUNT', name = 'm2_step_size')
-        self.ui.MP1_MR4_tip_total_step = 100#EpicsSignal('LM1K2:MCS2:01:m1:TOTAL_STEP_COUNT', write_pv = "LM1K2:MCS2:01:m1:SET_TOTAL_STEP_COUNT", name = 'tip_steps')
-        self.ui.MP1_MR4_tilt_total_step = 100#EpicsSignal('LM1K2:MCS2:01:m2:TOTAL_STEP_COUNT', write_pv = "LM1K2:MCS2:01:m2:SET_TOTAL_STEP_COUNT", name = 'tilt_steps')
-        self.MP1_MR4_max_step_tip = 1000
-        self.MP1_MR4_max_step_tilt = 1000
-        self.MP1_MR4_pos = 2#EpicsSignal('LM1K2:MCS2:01:m3.DRBV', write_pv = "LM1K2:MCS2:01:m3.VAL", name = 'DP2_MR1_pos')
+        self.ui.MP3_MR1_tip_step_size = EpicsSignalRO('LM1K4:HRM_MP3_MR1_TIP1:STEP_COUNT', name = 'MP3_MR1_tip_step_size')
+        self.ui.MP3_MR1_tilt_step_size = EpicsSignalRO('LM1K4:HRM_MP3_MR1_TILT1:STEP_COUNT', name = 'MP3_MR1_tilt_step_size')
+        self.ui.MP3_MR1_tip_total_step = EpicsSignal('LM1K4:HRM_MP3_MR1_TIP1:TOTAL_STEP_COUNT', write_pv = "LM1K4:HRM_MP3_MR1_TIP1:SET_TOTAL_STEP_COUNT", name = 'MP3_MR1_tip_steps')
+        self.ui.MP3_MR1_tilt_total_step = EpicsSignal('LM1K4:HRM_MP3_MR1_TILT1:TOTAL_STEP_COUNT', write_pv = "LM1K4:HRM_MP3_MR1_TILT1:SET_TOTAL_STEP_COUNT", name = 'MP3_MR1_tilt_steps')
+        
+        self.ui.MP1_MR4_tip_step_size = EpicsSignalRO('LM1K4:HRM_MP1_MR4_TIP1:STEP_COUNT', name = 'MP1_MR4_tip_step_size')
+        self.ui.MP1_MR4_tilt_step_size = EpicsSignalRO('LM1K4:HRM_MP1_MR4_TILT1:STEP_COUNT', name = 'MP1_MR4_tilt_step_size')
+        self.ui.MP1_MR4_tip_total_step = EpicsSignal('LM1K4:HRM_MP1_MR4_TIP1:TOTAL_STEP_COUNT', write_pv = "LM1K4:HRM_MP1_MR4_TIP1:SET_TOTAL_STEP_COUNT", name = 'MP1_MR4_tip_steps')
+        self.ui.MP1_MR4_tilt_total_step = EpicsSignal('LM1K4:HRM_MP1_MR4_TILT1:TOTAL_STEP_COUNT', write_pv = "LM1K4:HRM_MP1_MR4_TILT1:SET_TOTAL_STEP_COUNT", name = 'MP1_MR4_tilt_steps')
 
-        self.ui.MP1_MR7_tip_step_size = 100#EpicsSignalRO('LM1K2:MCS2:01:m1:STEP_COUNT', name = 'm1_step_size')
-        self.ui.MP1_MR7_tilt_step_size = 100#EpicsSignalRO('LM1K2:MCS2:01:m2:STEP_COUNT', name = 'm2_step_size')
-        self.ui.MP1_MR7_tip_total_step = 100#EpicsSignal('LM1K2:MCS2:01:m1:TOTAL_STEP_COUNT', write_pv = "LM1K2:MCS2:01:m1:SET_TOTAL_STEP_COUNT", name = 'tip_steps')
-        self.ui.MP1_MR7_tilt_total_step = 100#EpicsSignal('LM1K2:MCS2:01:m2:TOTAL_STEP_COUNT', write_pv = "LM1K2:MCS2:01:m2:SET_TOTAL_STEP_COUNT", name = 'tilt_steps')
-        self.MP1_MR7_max_step_tip = 1000
-        self.MP1_MR7_max_step_tilt = 1000
-        self.MP1_MR7_pos = 2#EpicsSignal('LM1K2:MCS2:01:m3.DRBV', write_pv = "LM1K2:MCS2:01:m3.VAL", name = 'DP2_MR1_pos')
+        self.ui.MP1_MR7_tip_step_size = EpicsSignalRO('LM1K4:HRM_MP1_MR7_TIP1:STEP_COUNT', name = 'MP1_MR7_tip_step_size')
+        self.ui.MP1_MR7_tilt_step_size = EpicsSignalRO('LM1K4:HRM_MP1_MR7_TILT1:STEP_COUNT', name = 'MP1_MR7_tilt_step_size')
+        self.ui.MP1_MR7_tip_total_step = EpicsSignal('LM1K4:HRM_MP1_MR7_TIP1:TOTAL_STEP_COUNT', write_pv = "LM1K4:HRM_MP1_MR7_TIP1:SET_TOTAL_STEP_COUNT", name = 'MP1_MR7_tip_steps')
+        self.ui.MP1_MR7_tilt_total_step = EpicsSignal('LM1K4:HRM_MP1_MR7_TILT1:TOTAL_STEP_COUNT', write_pv = "LM1K4:HRM_MP1_MR7_TILT1:SET_TOTAL_STEP_COUNT", name = 'MP1_MR7_tilt_steps')
+        
+        self.ui.MP1_MR8_tip_step_size = EpicsSignalRO('LM1K4:HRM_MP1_MR8_TIP1:STEP_COUNT', name = 'MP1_MR8_tip_step_size')
+        self.ui.MP1_MR8_tilt_step_size = EpicsSignalRO('LM1K4:HRM_MP1_MR8_TILT1:STEP_COUNT', name = 'MP1_MR8_tilt_step_size')
+        self.ui.MP1_MR8_tip_total_step = EpicsSignal('LM1K4:HRM_MP1_MR8_TIP1:TOTAL_STEP_COUNT', write_pv = "LM1K4:HRM_MP1_MR8_TIP1:SET_TOTAL_STEP_COUNT", name = 'MP1_MR8_tip_steps')
+        self.ui.MP1_MR8_tilt_total_step = EpicsSignal('LM1K4:HRM_MP1_MR8_TILT1:TOTAL_STEP_COUNT', write_pv = "LM1K4:HRM_MP1_MR8_TILT1:SET_TOTAL_STEP_COUNT", name = 'MP1_MR8_tilt_steps')
+        self.MP1_MR8_pos = EpicsSignal('LM1K4:HRM_MP1_MR8_LM1.DRBV', write_pv = 'LM1K4:HRM_MP1_MR8_LM1.VAL', name = 'MP1_MR8_pos')
 
-        self.ui.MP1_MR8_tip_step_size = 100#EpicsSignalRO('LM1K2:MCS2:01:m1:STEP_COUNT', name = 'm1_step_size')
-        self.ui.MP1_MR8_tilt_step_size = 100#EpicsSignalRO('LM1K2:MCS2:01:m2:STEP_COUNT', name = 'm2_step_size')
-        self.ui.MP1_MR8_tip_total_step = 100#EpicsSignal('LM1K2:MCS2:01:m1:TOTAL_STEP_COUNT', write_pv = "LM1K2:MCS2:01:m1:SET_TOTAL_STEP_COUNT", name = 'tip_steps')
-        self.ui.MP1_MR8_tilt_total_step = 100#EpicsSignal('LM1K2:MCS2:01:m2:TOTAL_STEP_COUNT', write_pv = "LM1K2:MCS2:01:m2:SET_TOTAL_STEP_COUNT", name = 'tilt_steps')
-        self.MP1_MR8_max_step_tip = 1000
-        self.MP1_MR8_max_step_tilt = 1000
-        self.MP1_MR8_pos = 2#EpicsSignal('LM1K2:MCS2:01:m3.DRBV', write_pv = "LM1K2:MCS2:01:m3.VAL", name = 'DP2_MR1_pos')
-
-        self.ui.MP3_MR2_tip_step_size = 100#EpicsSignalRO('LM1K2:MCS2:01:m1:STEP_COUNT', name = 'm1_step_size')
-        self.ui.MP3_MR2_tilt_step_size = 100#EpicsSignalRO('LM1K2:MCS2:01:m2:STEP_COUNT', name = 'm2_step_size')
-        self.ui.MP3_MR2_tip_total_step = 100#EpicsSignal('LM1K2:MCS2:01:m1:TOTAL_STEP_COUNT', write_pv = "LM1K2:MCS2:01:m1:SET_TOTAL_STEP_COUNT", name = 'tip_steps')
-        self.ui.MP3_MR2_tilt_total_step = 100#EpicsSignal('LM1K2:MCS2:01:m2:TOTAL_STEP_COUNT', write_pv = "LM1K2:MCS2:01:m2:SET_TOTAL_STEP_COUNT", name = 'tilt_steps')
-        self.MP3_MR2_max_step_tip = 1000
-        self.MP3_MR2_max_step_tilt = 1000
-        self.MP3_MR2_pos = 2#EpicsSignal('LM1K2:MCS2:01:m3.DRBV', write_pv = "LM1K2:MCS2:01:m3.VAL", name = 'DP2_MR1_pos')
+        self.ui.MP3_MR2_tip_step_size = EpicsSignalRO('LM1K4:HRM_MP3_MR2_TIP1:STEP_COUNT', name = 'MP3_MR2_tip_step_size')
+        self.ui.MP3_MR2_tilt_step_size = EpicsSignalRO('LM1K4:HRM_MP3_MR2_TILT1:STEP_COUNT', name = 'MP3_MR2_tilt_step_size')
+        self.ui.MP3_MR2_tip_total_step = EpicsSignal('LM1K4:HRM_MP3_MR2_TIP1:TOTAL_STEP_COUNT', write_pv = "LM1K4:HRM_MP3_MR2_TIP1:SET_TOTAL_STEP_COUNT", name = 'MP3_MR2_tip_steps')
+        self.ui.MP3_MR2_tilt_total_step = EpicsSignal('LM1K4:HRM_MP3_MR2_TILT1:TOTAL_STEP_COUNT', write_pv = "LM1K4:HRM_MP3_MR2_TILT1:SET_TOTAL_STEP_COUNT", name = 'MP3_MR2_tilt_steps')
+        self.MP3_MR2_pos = EpicsSignal('LM1K4:HRM_MP3_MR2_LM1.DRBV', write_pv = "LM1K4:HRM_MP3_MR2_LM1.VAL", name = 'MP3_MR2_pos')
         
     def tip11mm(self):
         newnumber = self.ui.MP1_MR1_tip_total_step.get() - self.ui.MP1_MR1_tip_step_size.get()
-        if newnumber <= 0:
-            self.ui.MP1_MR1_tip_total_step.put(0)
-        else:
-            self.ui.MP1_MR1_tip_total_step.put(newnumber)
+        #if newnumber <= 0:
+        #    self.ui.MP1_MR1_tip_total_step.put(0)
+        #else:
+        self.ui.MP1_MR1_tip_total_step.put(newnumber)
     def tip31mm(self):
         newnumber = self.ui.MP3_MR1_tip_total_step.get() - self.ui.MP3_MR1_tip_step_size.get()
-        if newnumber <= 0:
-            self.ui.MP3_MR1_tip_total_step.put(0)
-        else:
-            self.ui.MP3_MR1_tip_total_step.put(newnumber)
+        self.ui.MP3_MR1_tip_total_step.put(newnumber)
     def tip14mm(self):
         newnumber = self.ui.MP1_MR4_tip_total_step.get() - self.ui.MP1_MR4_tip_step_size.get()
-        if newnumber <= 0:
-            self.ui.MP1_MR4_tip_total_step.put(0)
-        else:
-            self.ui.MP1_MR4_tip_total_step.put(newnumber)
+        self.ui.MP1_MR4_tip_total_step.put(newnumber)
     def tip17mm(self):
         newnumber = self.ui.MP1_MR7_tip_total_step.get() - self.ui.MP1_MR7_tip_step_size.get()
-        if newnumber <= 0:
-            self.ui.MP1_MR7_tip_total_step.put(0)
-        else:
-            self.ui.MP1_MR7_tip_total_step.put(newnumber)
+        self.ui.MP1_MR7_tip_total_step.put(newnumber)
     def tip18mm(self):
         newnumber = self.ui.MP1_MR8_tip_total_step.get() - self.ui.MP1_MR8_tip_step_size.get()
-        if newnumber <= 0:
-            self.ui.MP1_MR8_tip_total_step.put(0)
-        else:
-            self.ui.MP1_MR8_tip_total_step.put(newnumber)
+        self.ui.MP1_MR8_tip_total_step.put(newnumber)
     def tip32mm(self):
-        newnumber = self.ui.MP3_MR3_tip_total_step.get() - self.ui.MP3_MR2_tip_step_size.get()
-        if newnumber <= 0:
-            self.ui.MP3_MR2_tip_total_step.put(0)
-        else:
-            self.ui.MP3_MR2_tip_total_step.put(newnumber)
+        newnumber = self.ui.MP3_MR2_tip_total_step.get() - self.ui.MP3_MR2_tip_step_size.get()
+        self.ui.MP3_MR2_tip_total_step.put(newnumber)
     def tip11m(self):
         newnumber = self.ui.MP1_MR1_tip_total_step.get() - 1
-        if newnumber <= 0:
-            self.ui.MP1_MR1_tip_total_step.put(0)
-        else:
-            self.ui.MP1_MR1_tip_total_step.put(newnumber)
+        self.ui.MP1_MR1_tip_total_step.put(newnumber)
     def tip31m(self):
         newnumber = self.ui.MP3_MR1_tip_total_step.get() - 1
-        if newnumber <= 0:
-            self.ui.MP3_MR1_tip_total_step.put(0)
-        else:
-            self.ui.MP3_MR1_tip_total_step.put(newnumber)
+        self.ui.MP3_MR1_tip_total_step.put(newnumber)
     def tip14m(self):
         newnumber = self.ui.MP1_MR4_tip_total_step.get() - 1
-        if newnumber <= 0:
-            self.ui.MP1_MR4_tip_total_step.put(0)
-        else:
-            self.ui.MP1_MR4_tip_total_step.put(newnumber)
+        self.ui.MP1_MR4_tip_total_step.put(newnumber)
     def tip17m(self):
         newnumber = self.ui.MP1_MR7_tip_total_step.get() - 1
-        if newnumber <= 0:
-            self.ui.MP1_MR7_tip_total_step.put(0)
-        else:
-            self.ui.MP1_MR7_tip_total_step.put(newnumber)
+        self.ui.MP1_MR7_tip_total_step.put(newnumber)
     def tip18m(self):
         newnumber = self.ui.MP1_MR8_tip_total_step.get() - 1
-        if newnumber <= 0:
-            self.ui.MP1_MR8_tip_total_step.put(0)
-        else:
-            self.ui.MP1_MR8_tip_total_step.put(newnumber)
+        self.ui.MP1_MR8_tip_total_step.put(newnumber)
     def tip32m(self):
-        newnumber = self.ui.MP3_MR3_tip_total_step.get() - 1
-        if newnumber <= 0:
-            self.ui.MP3_MR2_tip_total_step.put(0)
-        else:
-            self.ui.MP3_MR2_tip_total_step.put(newnumber)
+        newnumber = self.ui.MP3_MR2_tip_total_step.get() - 1
+        self.ui.MP3_MR2_tip_total_step.put(newnumber)
     def tip11p(self):
         newnumber = self.ui.MP1_MR1_tip_total_step.get() + 1
-        if newnumber >= self.MP1_MR1_max_step_tip:
-            self.ui.MP1_MR1_tip_total_step.put(self.MP1_MR1_max_step_tip)
-        else:
-            self.ui.MP1_MR1_tip_total_step.put(newnumber)
+        self.ui.MP1_MR1_tip_total_step.put(newnumber)
     def tip31p(self):
         newnumber = self.ui.MP3_MR1_tip_total_step.get() + 1
-        if newnumber >= self.MP3_MR1_max_step_tip:
-            self.ui.MP3_MR1_tip_total_step.put(self.MP3_MR1_max_step_tip)
-        else:
-            self.ui.MP3_MR1_tip_total_step.put(newnumber)
+        #if newnumber >= self.MP3_MR1_max_step_tip:
+        #    self.ui.MP3_MR1_tip_total_step.put(self.MP3_MR1_max_step_tip)
+        #else:
+        self.ui.MP3_MR1_tip_total_step.put(newnumber)
     def tip14p(self):
         newnumber = self.ui.MP1_MR4_tip_total_step.get() + 1
-        if newnumber >= self.MP1_MR4_max_step_tip:
-            self.ui.MP1_MR4_tip_total_step.put(self.MP4_MR1_max_step_tip)
-        else:
-            self.ui.MP1_MR4_tip_total_step.put(newnumber)
+        elf.ui.MP1_MR4_tip_total_step.put(newnumber)
     def tip17p(self):
         newnumber = self.ui.MP1_MR7_tip_total_step.get() + 1
-        if newnumber >= self.MP1_MR7_max_step_tip:
-            self.ui.MP1_MR7_tip_total_step.put(self.MP1_MR7_max_step_tip)
-        else:
-            self.ui.MP1_MR7_tip_total_step.put(newnumber)
+        self.ui.MP1_MR7_tip_total_step.put(newnumber)
     def tip18p(self):
         newnumber = self.ui.MP1_MR8_tip_total_step.get() + 1
-        if newnumber >= self.MP1_MR8_max_step_tip:
-            self.ui.MP1_MR8_tip_total_step.put(self.MP1_MR8_max_step_tip)
-        else:
-            self.ui.MP1_MR8_tip_total_step.put(newnumber)
+        self.ui.MP1_MR8_tip_total_step.put(newnumber)
     def tip32p(self):
         newnumber = self.ui.MP3_MR2_tip_total_step.get() + 1
-        if newnumber >= self.MP3_MR2_max_step_tip:
-            self.ui.MP3_MR2_tip_total_step.put(self.MP3_MR2_max_step_tip)
-        else:
-            self.ui.MP3_MR2_tip_total_step.put(newnumber)
+        self.ui.MP3_MR2_tip_total_step.put(newnumber)
     def tip11pp(self):
         newnumber = self.ui.MP1_MR1_tip_total_step.get() + self.ui.MP1_MR1_tip_step_size.get()
-        if newnumber >= self.MP1_MR1_max_step_tip:
-            self.ui.MP1_MR1_tip_total_step.put(self.MP1_MR1_max_step_tip)
-        else:
-            self.ui.MP1_MR1_tip_total_step.put(newnumber)
+        self.ui.MP1_MR1_tip_total_step.put(newnumber)
     def tip31pp(self):
         newnumber = self.ui.MP3_MR1_tip_total_step.get() + self.ui.MP3_MR1_tip_step_size.get()
-        if newnumber >= self.MP3_MR1_max_step_tip:
-            self.ui.MP3_MR1_tip_total_step.put(self.MP3_MR1_max_step_tip)
-        else:
-            self.ui.MP3_MR1_tip_total_step.put(newnumber)
+        self.ui.MP3_MR1_tip_total_step.put(newnumber)
     def tip14pp(self):
         newnumber = self.ui.MP1_MR4_tip_total_step.get() + self.ui.MP1_MR4_tip_step_size.get()
-        if newnumber >= self.MP1_MR4_max_step_tip:
-            self.ui.MP1_MR4_tip_total_step.put(self.MP1_MR4_max_step_tip)
-        else:
-            self.ui.MP1_MR4_tip_total_step.put(newnumber)
+        self.ui.MP1_MR4_tip_total_step.put(newnumber)
     def tip17pp(self):
         newnumber = self.ui.MP1_MR7_tip_total_step.get() + self.ui.MP1_MR7_tip_step_size.get()
-        if newnumber >= self.MP1_MR7_max_step_tip:
-            self.ui.MP1_MR7_tip_total_step.put(self.MP1_MR7_max_step_tip)
-        else:
-            self.ui.MP1_MR7_tip_total_step.put(newnumber)
+        self.ui.MP1_MR7_tip_total_step.put(newnumber)
     def tip18pp(self):
         newnumber = self.ui.MP1_MR8_tip_total_step.get() + self.ui.MP1_MR8_tip_step_size.get()
-        if newnumber >= self.MP1_MR8_max_step_tip:
-            self.ui.MP1_MR8_tip_total_step.put(self.MP1_MR8_max_step_tip)
-        else:
-            self.ui.MP1_MR8_tip_total_step.put(newnumber)
+        self.ui.MP1_MR8_tip_total_step.put(newnumber)
     def tip32pp(self):
         newnumber = self.ui.MP3_MR2_tip_total_step.get() + self.ui.MP3_MR2_tip_step_size.get()
-        if newnumber >= self.MP3_MR2_max_step_tip:
-            self.ui.MP3_MR2_tip_total_step.put(self.MP3_MR2_max_step_tip)
-        else:
-            self.ui.MP3_MR2_tip_total_step.put(newnumber)
+        self.ui.MP3_MR2_tip_total_step.put(newnumber)
 
     def tilt11mm(self):
         newnumber = self.ui.MP1_MR1_tilt_total_step.get() - self.ui.MP1_MR1_tilt_step_size.get()
-        if newnumber <= 0:
-            self.ui.MP1_MR1_tilt_total_step.put(0)
-        else:
-            self.ui.MP1_MR1_tilt_total_step.put(newnumber)
+        self.ui.MP1_MR1_tilt_total_step.put(newnumber)
     def tilt31mm(self):
         newnumber = self.ui.MP3_MR1_tilt_total_step.get() - self.ui.MP3_MR1_tilt_step_size.get()
-        if newnumber <= 0:
-            self.ui.MP3_MR1_tilt_total_step.put(0)
-        else:
-            self.ui.MP3_MR1_tilt_total_step.put(newnumber)
+        self.ui.MP3_MR1_tilt_total_step.put(newnumber)
     def tilt14mm(self):
         newnumber = self.ui.MP1_MR4_tilt_total_step.get() - self.ui.MP1_MR4_tilt_step_size.get()
-        if newnumber <= 0:
-            self.ui.MP1_MR4_tilt_total_step.put(0)
-        else:
-            self.ui.MP1_MR4_tilt_total_step.put(newnumber)
+        self.ui.MP1_MR4_tilt_total_step.put(newnumber)
     def tilt17mm(self):
         newnumber = self.ui.MP1_MR7_tilt_total_step.get() - self.ui.MP1_MR7_tilt_step_size.get()
-        if newnumber <= 0:
-            self.ui.MP1_MR7_tilt_total_step.put(0)
-        else:
-            self.ui.MP1_MR7_tilt_total_step.put(newnumber)
+        self.ui.MP1_MR7_tilt_total_step.put(newnumber)
     def tilt18mm(self):
         newnumber = self.ui.MP1_MR8_tilt_total_step.get() - self.ui.MP1_MR8_tilt_step_size.get()
-        if newnumber <= 0:
-            self.ui.MP1_MR8_tilt_total_step.put(0)
-        else:
-            self.ui.MP1_MR8_tilt_total_step.put(newnumber)
+        self.ui.MP1_MR8_tilt_total_step.put(newnumber)
     def tilt32mm(self):
-        newnumber = self.ui.MP3_MR3_tilt_total_step.get() - self.ui.MP3_MR2_tilt_step_size.get()
-        if newnumber <= 0:
-            self.ui.MP3_MR2_tilt_total_step.put(0)
-        else:
-            self.ui.MP3_MR2_tilt_total_step.put(newnumber)
+        newnumber = self.ui.MP3_MR2_tilt_total_step.get() - self.ui.MP3_MR2_tilt_step_size.get()
+        self.ui.MP3_MR2_tilt_total_step.put(newnumber)
     def tilt11m(self):
         newnumber = self.ui.MP1_MR1_tilt_total_step.get() - 1
-        if newnumber <= 0:
-            self.ui.MP1_MR1_tilt_total_step.put(0)
-        else:
-            self.ui.MP1_MR1_tilt_total_step.put(newnumber)
+        self.ui.MP1_MR1_tilt_total_step.put(newnumber)
     def tilt31m(self):
         newnumber = self.ui.MP3_MR1_tilt_total_step.get() - 1
-        if newnumber <= 0:
-            self.ui.MP3_MR1_tilt_total_step.put(0)
-        else:
-            self.ui.MP3_MR1_tilt_total_step.put(newnumber)
+        self.ui.MP3_MR1_tilt_total_step.put(newnumber)
     def tilt14m(self):
         newnumber = self.ui.MP1_MR4_tilt_total_step.get() - 1
-        if newnumber <= 0:
-            self.ui.MP1_MR4_tilt_total_step.put(0)
-        else:
-            self.ui.MP1_MR4_tilt_total_step.put(newnumber)
+        self.ui.MP1_MR4_tilt_total_step.put(newnumber)
     def tilt17m(self):
         newnumber = self.ui.MP1_MR7_tilt_total_step.get() - 1
-        if newnumber <= 0:
-            self.ui.MP1_MR7_tilt_total_step.put(0)
-        else:
-            self.ui.MP1_MR7_tilt_total_step.put(newnumber)
+        self.ui.MP1_MR7_tilt_total_step.put(newnumber)
     def tilt18m(self):
         newnumber = self.ui.MP1_MR8_tilt_total_step.get() - 1
-        if newnumber <= 0:
-            self.ui.MP1_MR8_tilt_total_step.put(0)
-        else:
-            self.ui.MP1_MR8_tilt_total_step.put(newnumber)
+        self.ui.MP1_MR8_tilt_total_step.put(newnumber)
     def tilt32m(self):
-        newnumber = self.ui.MP3_MR3_tilt_total_step.get() - 1
-        if newnumber <= 0:
-            self.ui.MP3_MR2_tilt_total_step.put(0)
-        else:
-            self.ui.MP3_MR2_tilt_total_step.put(newnumber)
+        newnumber = self.ui.MP3_MR2_tilt_total_step.get() - 1
+        self.ui.MP3_MR2_tilt_total_step.put(newnumber)
     def tilt11p(self):
         newnumber = self.ui.MP1_MR1_tilt_total_step.get() + 1
-        if newnumber >= self.MP1_MR1_max_step_tilt:
-            self.ui.MP1_MR1_tilt_total_step.put(self.MP1_MR1_max_step_tilt)
-        else:
-            self.ui.MP1_MR1_tilt_total_step.put(newnumber)
+        self.ui.MP1_MR1_tilt_total_step.put(newnumber)
     def tilt31p(self):
         newnumber = self.ui.MP3_MR1_tilt_total_step.get() + 1
-        if newnumber >= self.MP3_MR1_max_step_tilt:
-            self.ui.MP3_MR1_tilt_total_step.put(self.MP3_MR1_max_step_tilt)
-        else:
-            self.ui.MP3_MR1_tilt_total_step.put(newnumber)
+        self.ui.MP3_MR1_tilt_total_step.put(newnumber)
     def tilt14p(self):
         newnumber = self.ui.MP1_MR4_tilt_total_step.get() + 1
-        if newnumber >= self.MP1_MR4_max_step_tilt:
-            self.ui.MP1_MR4_tilt_total_step.put(self.MP4_MR1_max_step_tilt)
-        else:
-            self.ui.MP1_MR4_tilt_total_step.put(newnumber)
+        self.ui.MP1_MR4_tilt_total_step.put(newnumber)
     def tilt17p(self):
         newnumber = self.ui.MP1_MR7_tilt_total_step.get() + 1
-        if newnumber >= self.MP1_MR7_max_step_tilt:
-            self.ui.MP1_MR7_tilt_total_step.put(self.MP1_MR7_max_step_tilt)
-        else:
-            self.ui.MP1_MR7_tilt_total_step.put(newnumber)
+        self.ui.MP1_MR7_tilt_total_step.put(newnumber)
     def tilt18p(self):
         newnumber = self.ui.MP1_MR8_tilt_total_step.get() + 1
-        if newnumber >= self.MP1_MR8_max_step_tilt:
-            self.ui.MP1_MR8_tilt_total_step.put(self.MP1_MR8_max_step_tilt)
-        else:
-            self.ui.MP1_MR8_tilt_total_step.put(newnumber)
+        self.ui.MP1_MR8_tilt_total_step.put(newnumber)
     def tilt32p(self):
         newnumber = self.ui.MP3_MR2_tilt_total_step.get() + 1
-        if newnumber >= self.MP3_MR2_max_step_tilt:
-            self.ui.MP3_MR2_tilt_total_step.put(self.MP3_MR2_max_step_tilt)
-        else:
-            self.ui.MP3_MR2_tilt_total_step.put(newnumber)
+        #if newnumber >= self.MP3_MR2_max_step_tilt:
+        #    self.ui.MP3_MR2_tilt_total_step.put(self.MP3_MR2_max_step_tilt)
+        #else:
+        self.ui.MP3_MR2_tilt_total_step.put(newnumber)
     def tilt11pp(self):
         newnumber = self.ui.MP1_MR1_tilt_total_step.get() + self.ui.MP1_MR1_tilt_step_size.get()
-        if newnumber >= self.MP1_MR1_max_step_tilt:
-            self.ui.MP1_MR1_tilt_total_step.put(self.MP1_MR1_max_step_tilt)
-        else:
-            self.ui.MP1_MR1_tip_total_step.put(newnumber)
+        self.ui.MP1_MR1_tilt_total_step.put(newnumber)
     def tilt31pp(self):
         newnumber = self.ui.MP3_MR1_tilt_total_step.get() + self.ui.MP3_MR1_tilt_step_size.get()
-        if newnumber >= self.MP3_MR1_max_step_tilt:
-            self.ui.MP3_MR1_tilt_total_step.put(self.MP3_MR1_max_step_tilt)
-        else:
-            self.ui.MP3_MR1_tilt_total_step.put(newnumber)
+        self.ui.MP3_MR1_tilt_total_step.put(newnumber)
     def tilt14pp(self):
         newnumber = self.ui.MP1_MR4_tilt_total_step.get() + self.ui.MP1_MR4_tilt_step_size.get()
-        if newnumber >= self.MP1_MR4_max_step_tilt:
-            self.ui.MP1_MR4_tilt_total_step.put(self.MP1_MR4_max_step_tilt)
-        else:
-            self.ui.MP1_MR4_tilt_total_step.put(newnumber)
+        self.ui.MP1_MR4_tilt_total_step.put(newnumber)
     def tilt17pp(self):
         newnumber = self.ui.MP1_MR7_tilt_total_step.get() + self.ui.MP1_MR7_tilt_step_size.get()
-        if newnumber >= self.MP1_MR7_max_step_tilt:
-            self.ui.MP1_MR7_tilt_total_step.put(self.MP1_MR7_max_step_tilt)
-        else:
-            self.ui.MP1_MR7_tilt_total_step.put(newnumber)
+        self.ui.MP1_MR7_tilt_total_step.put(newnumber)
     def tilt18pp(self):
         newnumber = self.ui.MP1_MR8_tilt_total_step.get() + self.ui.MP1_MR8_tilt_step_size.get()
-        if newnumber >= self.MP1_MR8_max_step_tilt:
-            self.ui.MP1_MR8_tilt_total_step.put(self.MP1_MR8_max_step_tilt)
-        else:
-            self.ui.MP1_MR8_tip_total_step.put(newnumber)
+        self.ui.MP1_MR8_tilt_total_step.put(newnumber)
     def tilt32pp(self):
         newnumber = self.ui.MP3_MR2_tilt_total_step.get() + self.ui.MP3_MR2_tilt_step_size.get()
-        if newnumber >= self.MP3_MR2_max_step_tilt:
-            self.ui.MP3_MR2_tilt_total_step.put(self.MP3_MR2_max_step_tilt)
-        else:
-            self.ui.MP3_MR2_tilt_total_step.put(newnumber)
+        self.ui.MP3_MR2_tilt_total_step.put(newnumber)
     
     #########END the Embedded Buttons#############
     
     def gotoMP1_MR1_SHG_THG(self):
+        self.MP1_MR1_pos.put(10)
         self.HRM_MP1_MR1.setGeometry(60,160,211,41)
         self.PyDMDrawingLine.penStyle = PyQt5.QtCore.Qt.PenStyle.DashLine
         self.PyDMDrawingLine_2.penStyle = PyQt5.QtCore.Qt.PenStyle.SolidLine
@@ -532,6 +391,7 @@ class Harmonic_diagram(Display):
 
         
     def gotoMP1_MR1_Bypass_800(self):
+        self.MP1_MR1_pos.put(0)
         self.HRM_MP1_MR1.setGeometry(20,160,211,41)
         self.PyDMDrawingLine_11.setGeometry(1000,440,91,101)
         self.PyDMDrawingLine_11.penColor = PyQt5.QtGui.QColor(254, 0, 0)
@@ -561,6 +421,7 @@ class Harmonic_diagram(Display):
         self.PyDMDrawingLine_27.penStyle = PyQt5.QtCore.Qt.PenStyle.DashLine
 
     def gotoMP3_MR1_Bypass(self):
+        #self.MP3_MR1_pos.put(0)
         self.HRM_MP3_MR1.setGeometry(20,430,211,41)
         if self.HRM_MP1_MR1.x() < 60:
             self.PyDMDrawingLine.penStyle = PyQt5.QtCore.Qt.PenStyle.DashLine
@@ -585,6 +446,7 @@ class Harmonic_diagram(Display):
             self.PyDMDrawingLine_27.penStyle = PyQt5.QtCore.Qt.PenStyle.DashLine
         
     def gotoMP3_MR1_800(self):
+        #self.MP3_MR1_pos.put(10)
         self.HRM_MP3_MR1.setGeometry(60,430,211,41)
         if self.HRM_MP1_MR1.x() < 60:
             self.PyDMDrawingLine.penStyle = PyQt5.QtCore.Qt.PenStyle.SolidLine
@@ -610,6 +472,9 @@ class Harmonic_diagram(Display):
             self.PyDMDrawingLine_27.penStyle = PyQt5.QtCore.Qt.PenStyle.DashLine
             
     def gotoMP1_SPO1_SHG(self):# S is blue
+        self.MP1_SPO1_pos.put(0)
+        self.MP1_PC1_pos.put(0)
+        self.MP1_PC11_PZM2_pos.put(0)
         self.HRM_MP1_SPO1_up.setGeometry(440,230,61,20)
         self.HRM_MP1_SPO1_bot.setGeometry(440,270,61,20)
         self.HAR_MP1_PC1.setGeometry(280,380,41,41)
@@ -653,6 +518,9 @@ class Harmonic_diagram(Display):
                 self.PyDMDrawingLine_27.penStyle = PyQt5.QtCore.Qt.PenStyle.DashLine
         
     def gotoMP1_SPO1_THG(self):#pink
+        self.MP1_SPO1_pos.put(10)
+        self.MP1_PC1_pos.put(10)
+        self.MP1_PC11_PZM2_pos.put(-10)
         self.HRM_MP1_SPO1_up.setGeometry(440,260,61,20)
         self.HRM_MP1_SPO1_bot.setGeometry(440,300,61,20)
         self.HAR_MP1_PC1.setGeometry(570,340,41,41)
@@ -690,6 +558,7 @@ class Harmonic_diagram(Display):
     def gotoMP1_PC1_THG(self):
         return print(1)
     def gotoMP3_MR2_Diag(self):
+        self.MP3_MR2_pos.put(0)
         self.HRM_DP2_MR1.setGeometry(990,390,111,21)
         self.HRM_MP3_MR2.setGeometry(940,430,211,41)
         self.PyDMDrawingLine.setGeometry(160,400,891,101)
@@ -701,6 +570,7 @@ class Harmonic_diagram(Display):
             self.PyDMDrawingLine_11.setGeometry(1000,440,91,101)
         
     def gotoMP3_MR2_Output(self):
+        self.MP3_MR2_pos.put(10)
         self.HRM_DP2_MR1.setGeometry(1030,390,111,21)
         self.HRM_MP3_MR2.setGeometry(980,430,211,41)
         self.PyDMDrawingLine.setGeometry(160,400,931,101)
@@ -711,6 +581,7 @@ class Harmonic_diagram(Display):
         elif self.HRM_MP1_MR1.x() < 60:
             self.PyDMDrawingLine_11.setGeometry(960,450,251,101)
     def gotoMP1_MR8_Bypass(self):
+        self.MP1_MR8_pos.put(10)
         self.HRM_MP1_MR8.setGeometry(1030, 300, 111, 21)
         self.PyDMDrawingLine_14.setGeometry(900,150,381,241)
         if self.HRM_MP1_MR1.x() == 60:
@@ -719,6 +590,7 @@ class Harmonic_diagram(Display):
             self.PyDMDrawingLine_27.penStyle = PyQt5.QtCore.Qt.PenStyle.DashLine
         
     def gotoMP1_MR8_SHG_THG(self):
+        self.MP1_MR8_pos.put(0)
         self.HRM_MP1_MR8.setGeometry(990, 300, 111, 21)
         self.PyDMDrawingLine_14.setGeometry(890,240,301,151)
         self.PyDMDrawingLine_11.penStyle = PyQt5.QtCore.Qt.PenStyle.SolidLine
@@ -738,6 +610,7 @@ class Harmonic_diagram(Display):
     def gotoexpert(self):#(self, other)
         expertscreen = Expert()
         expertscreen.show()
+
         
 
     def ui_filename(self):
@@ -892,7 +765,7 @@ app = QApplication(sys.argv)
 Harmonics = Harmonic_diagram()
 widget = QtWidgets.QStackedWidget()
 widget.addWidget(Harmonics)
-widget.setFixedHeight(570)
+widget.setFixedHeight(600)
 widget.setFixedWidth(1260)
 widget.show()
 

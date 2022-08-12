@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1065</width>
+    <width>1140</width>
     <height>700</height>
    </rect>
   </property>
@@ -42,7 +42,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_2">
    <property name="geometry">
     <rect>
-     <x>100</x>
+     <x>150</x>
      <y>150</y>
      <width>141</width>
      <height>121</height>
@@ -70,7 +70,7 @@
     <rect>
      <x>110</x>
      <y>220</y>
-     <width>61</width>
+     <width>111</width>
      <height>101</height>
     </rect>
    </property>
@@ -94,7 +94,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_4">
    <property name="geometry">
     <rect>
-     <x>170</x>
+     <x>220</x>
      <y>100</y>
      <width>111</width>
      <height>101</height>
@@ -120,7 +120,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_5">
    <property name="geometry">
     <rect>
-     <x>210</x>
+     <x>260</x>
      <y>80</y>
      <width>141</width>
      <height>71</height>
@@ -146,7 +146,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_6">
    <property name="geometry">
     <rect>
-     <x>280</x>
+     <x>330</x>
      <y>30</y>
      <width>631</width>
      <height>101</height>
@@ -172,7 +172,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_7">
    <property name="geometry">
     <rect>
-     <x>840</x>
+     <x>890</x>
      <y>0</y>
      <width>141</width>
      <height>81</height>
@@ -198,7 +198,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_8">
    <property name="geometry">
     <rect>
-     <x>280</x>
+     <x>330</x>
      <y>100</y>
      <width>105</width>
      <height>101</height>
@@ -224,7 +224,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_9">
    <property name="geometry">
     <rect>
-     <x>350</x>
+     <x>400</x>
      <y>110</y>
      <width>121</width>
      <height>131</height>
@@ -250,7 +250,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_10">
    <property name="geometry">
     <rect>
-     <x>340</x>
+     <x>390</x>
      <y>150</y>
      <width>101</width>
      <height>81</height>
@@ -276,7 +276,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_11">
    <property name="geometry">
     <rect>
-     <x>390</x>
+     <x>440</x>
      <y>110</y>
      <width>121</width>
      <height>131</height>
@@ -302,7 +302,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_12">
    <property name="geometry">
     <rect>
-     <x>370</x>
+     <x>420</x>
      <y>110</y>
      <width>121</width>
      <height>131</height>
@@ -328,7 +328,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_13">
    <property name="geometry">
     <rect>
-     <x>430</x>
+     <x>480</x>
      <y>110</y>
      <width>121</width>
      <height>131</height>
@@ -354,7 +354,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_14">
    <property name="geometry">
     <rect>
-     <x>410</x>
+     <x>460</x>
      <y>110</y>
      <width>121</width>
      <height>131</height>
@@ -380,7 +380,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_15">
    <property name="geometry">
     <rect>
-     <x>470</x>
+     <x>520</x>
      <y>110</y>
      <width>121</width>
      <height>131</height>
@@ -406,7 +406,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_16">
    <property name="geometry">
     <rect>
-     <x>450</x>
+     <x>500</x>
      <y>110</y>
      <width>121</width>
      <height>131</height>
@@ -432,7 +432,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_17">
    <property name="geometry">
     <rect>
-     <x>510</x>
+     <x>560</x>
      <y>110</y>
      <width>121</width>
      <height>131</height>
@@ -458,7 +458,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_18">
    <property name="geometry">
     <rect>
-     <x>490</x>
+     <x>540</x>
      <y>110</y>
      <width>121</width>
      <height>131</height>
@@ -484,7 +484,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_19">
    <property name="geometry">
     <rect>
-     <x>550</x>
+     <x>600</x>
      <y>110</y>
      <width>121</width>
      <height>131</height>
@@ -510,7 +510,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_20">
    <property name="geometry">
     <rect>
-     <x>530</x>
+     <x>580</x>
      <y>110</y>
      <width>121</width>
      <height>131</height>
@@ -536,7 +536,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_21">
    <property name="geometry">
     <rect>
-     <x>590</x>
+     <x>640</x>
      <y>110</y>
      <width>121</width>
      <height>131</height>
@@ -562,7 +562,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_22">
    <property name="geometry">
     <rect>
-     <x>570</x>
+     <x>620</x>
      <y>110</y>
      <width>121</width>
      <height>131</height>
@@ -588,7 +588,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_23">
    <property name="geometry">
     <rect>
-     <x>630</x>
+     <x>680</x>
      <y>110</y>
      <width>121</width>
      <height>131</height>
@@ -614,7 +614,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_24">
    <property name="geometry">
     <rect>
-     <x>610</x>
+     <x>660</x>
      <y>110</y>
      <width>121</width>
      <height>131</height>
@@ -640,7 +640,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_26">
    <property name="geometry">
     <rect>
-     <x>650</x>
+     <x>700</x>
      <y>110</y>
      <width>121</width>
      <height>131</height>
@@ -666,7 +666,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_25">
    <property name="geometry">
     <rect>
-     <x>210</x>
+     <x>260</x>
      <y>150</y>
      <width>141</width>
      <height>71</height>
@@ -697,7 +697,7 @@
     <rect>
      <x>30</x>
      <y>190</y>
-     <width>251</width>
+     <width>301</width>
      <height>61</height>
     </rect>
    </property>
@@ -753,9 +753,9 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_28">
    <property name="geometry">
     <rect>
-     <x>260</x>
+     <x>310</x>
      <y>40</y>
-     <width>631</width>
+     <width>641</width>
      <height>101</height>
     </rect>
    </property>
@@ -779,7 +779,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_30">
    <property name="geometry">
     <rect>
-     <x>830</x>
+     <x>890</x>
      <y>-20</y>
      <width>111</width>
      <height>111</height>
@@ -805,7 +805,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_31">
    <property name="geometry">
     <rect>
-     <x>230</x>
+     <x>280</x>
      <y>90</y>
      <width>81</width>
      <height>51</height>
@@ -831,7 +831,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_32">
    <property name="geometry">
     <rect>
-     <x>220</x>
+     <x>270</x>
      <y>140</y>
      <width>201</width>
      <height>201</height>
@@ -857,7 +857,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_33">
    <property name="geometry">
     <rect>
-     <x>270</x>
+     <x>320</x>
      <y>90</y>
      <width>51</width>
      <height>101</height>
@@ -883,7 +883,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_34">
    <property name="geometry">
     <rect>
-     <x>320</x>
+     <x>370</x>
      <y>290</y>
      <width>501</width>
      <height>101</height>
@@ -909,7 +909,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_35">
    <property name="geometry">
     <rect>
-     <x>740</x>
+     <x>790</x>
      <y>330</y>
      <width>221</width>
      <height>101</height>
@@ -935,7 +935,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_36">
    <property name="geometry">
     <rect>
-     <x>900</x>
+     <x>950</x>
      <y>320</y>
      <width>121</width>
      <height>121</height>
@@ -961,7 +961,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_37">
    <property name="geometry">
     <rect>
-     <x>960</x>
+     <x>1010</x>
      <y>270</y>
      <width>131</width>
      <height>101</height>
@@ -987,7 +987,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_38">
    <property name="geometry">
     <rect>
-     <x>737</x>
+     <x>787</x>
      <y>310</y>
      <width>91</width>
      <height>101</height>
@@ -1013,7 +1013,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_39">
    <property name="geometry">
     <rect>
-     <x>710</x>
+     <x>760</x>
      <y>390</y>
      <width>251</width>
      <height>101</height>
@@ -1039,7 +1039,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_40">
    <property name="geometry">
     <rect>
-     <x>710</x>
+     <x>760</x>
      <y>420</y>
      <width>211</width>
      <height>101</height>
@@ -1065,7 +1065,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_42">
    <property name="geometry">
     <rect>
-     <x>710</x>
+     <x>760</x>
      <y>470</y>
      <width>211</width>
      <height>101</height>
@@ -1091,7 +1091,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_41">
    <property name="geometry">
     <rect>
-     <x>710</x>
+     <x>760</x>
      <y>440</y>
      <width>211</width>
      <height>101</height>
@@ -1117,7 +1117,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_43">
    <property name="geometry">
     <rect>
-     <x>710</x>
+     <x>760</x>
      <y>490</y>
      <width>211</width>
      <height>101</height>
@@ -1143,7 +1143,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_44">
    <property name="geometry">
     <rect>
-     <x>710</x>
+     <x>760</x>
      <y>520</y>
      <width>211</width>
      <height>101</height>
@@ -1169,7 +1169,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_45">
    <property name="geometry">
     <rect>
-     <x>710</x>
+     <x>760</x>
      <y>490</y>
      <width>211</width>
      <height>101</height>
@@ -1195,7 +1195,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_46">
    <property name="geometry">
     <rect>
-     <x>710</x>
+     <x>760</x>
      <y>540</y>
      <width>211</width>
      <height>101</height>
@@ -1221,7 +1221,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_48">
    <property name="geometry">
     <rect>
-     <x>710</x>
+     <x>760</x>
      <y>570</y>
      <width>221</width>
      <height>101</height>
@@ -1247,7 +1247,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_47">
    <property name="geometry">
     <rect>
-     <x>900</x>
+     <x>950</x>
      <y>470</y>
      <width>41</width>
      <height>21</height>
@@ -1273,7 +1273,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_49">
    <property name="geometry">
     <rect>
-     <x>900</x>
+     <x>950</x>
      <y>520</y>
      <width>41</width>
      <height>21</height>
@@ -1299,7 +1299,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_50">
    <property name="geometry">
     <rect>
-     <x>900</x>
+     <x>950</x>
      <y>570</y>
      <width>41</width>
      <height>21</height>
@@ -1325,7 +1325,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_51">
    <property name="geometry">
     <rect>
-     <x>690</x>
+     <x>740</x>
      <y>440</y>
      <width>41</width>
      <height>31</height>
@@ -1351,7 +1351,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_52">
    <property name="geometry">
     <rect>
-     <x>690</x>
+     <x>740</x>
      <y>490</y>
      <width>41</width>
      <height>31</height>
@@ -1377,7 +1377,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_53">
    <property name="geometry">
     <rect>
-     <x>690</x>
+     <x>740</x>
      <y>540</y>
      <width>41</width>
      <height>31</height>
@@ -1403,7 +1403,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_54">
    <property name="geometry">
     <rect>
-     <x>690</x>
+     <x>740</x>
      <y>590</y>
      <width>41</width>
      <height>31</height>
@@ -1429,7 +1429,7 @@
   <widget class="PyDMDrawingTriangle" name="PyDMDrawingTriangle">
    <property name="geometry">
     <rect>
-     <x>700</x>
+     <x>750</x>
      <y>430</y>
      <width>21</width>
      <height>21</height>
@@ -1442,7 +1442,7 @@
   <widget class="PyDMDrawingTriangle" name="PyDMDrawingTriangle_2">
    <property name="geometry">
     <rect>
-     <x>700</x>
+     <x>750</x>
      <y>480</y>
      <width>21</width>
      <height>21</height>
@@ -1455,7 +1455,7 @@
   <widget class="PyDMDrawingTriangle" name="PyDMDrawingTriangle_3">
    <property name="geometry">
     <rect>
-     <x>700</x>
+     <x>750</x>
      <y>530</y>
      <width>21</width>
      <height>21</height>
@@ -1468,7 +1468,7 @@
   <widget class="PyDMDrawingTriangle" name="PyDMDrawingTriangle_4">
    <property name="geometry">
     <rect>
-     <x>700</x>
+     <x>750</x>
      <y>460</y>
      <width>21</width>
      <height>21</height>
@@ -1484,7 +1484,7 @@
   <widget class="PyDMDrawingTriangle" name="PyDMDrawingTriangle_5">
    <property name="geometry">
     <rect>
-     <x>700</x>
+     <x>750</x>
      <y>580</y>
      <width>21</width>
      <height>21</height>
@@ -1497,7 +1497,7 @@
   <widget class="PyDMDrawingTriangle" name="PyDMDrawingTriangle_6">
    <property name="geometry">
     <rect>
-     <x>700</x>
+     <x>750</x>
      <y>510</y>
      <width>21</width>
      <height>21</height>
@@ -1513,7 +1513,7 @@
   <widget class="PyDMDrawingTriangle" name="PyDMDrawingTriangle_7">
    <property name="geometry">
     <rect>
-     <x>700</x>
+     <x>750</x>
      <y>560</y>
      <width>20</width>
      <height>21</height>
@@ -1529,7 +1529,7 @@
   <widget class="PyDMDrawingTriangle" name="PyDMDrawingTriangle_8">
    <property name="geometry">
     <rect>
-     <x>700</x>
+     <x>750</x>
      <y>610</y>
      <width>21</width>
      <height>21</height>
@@ -1545,7 +1545,7 @@
   <widget class="PyDMDrawingTriangle" name="PyDMDrawingTriangle_9">
    <property name="geometry">
     <rect>
-     <x>910</x>
+     <x>960</x>
      <y>460</y>
      <width>21</width>
      <height>21</height>
@@ -1561,7 +1561,7 @@
   <widget class="PyDMDrawingTriangle" name="PyDMDrawingTriangle_10">
    <property name="geometry">
     <rect>
-     <x>910</x>
+     <x>960</x>
      <y>510</y>
      <width>21</width>
      <height>21</height>
@@ -1577,7 +1577,7 @@
   <widget class="PyDMDrawingTriangle" name="PyDMDrawingTriangle_11">
    <property name="geometry">
     <rect>
-     <x>910</x>
+     <x>960</x>
      <y>560</y>
      <width>21</width>
      <height>21</height>
@@ -1593,7 +1593,7 @@
   <widget class="PyDMDrawingTriangle" name="PyDMDrawingTriangle_12">
    <property name="geometry">
     <rect>
-     <x>910</x>
+     <x>960</x>
      <y>480</y>
      <width>21</width>
      <height>21</height>
@@ -1609,7 +1609,7 @@
   <widget class="PyDMDrawingTriangle" name="PyDMDrawingTriangle_13">
    <property name="geometry">
     <rect>
-     <x>910</x>
+     <x>960</x>
      <y>530</y>
      <width>21</width>
      <height>21</height>
@@ -1625,7 +1625,7 @@
   <widget class="PyDMDrawingTriangle" name="PyDMDrawingTriangle_14">
    <property name="geometry">
     <rect>
-     <x>910</x>
+     <x>960</x>
      <y>580</y>
      <width>21</width>
      <height>21</height>
@@ -1641,7 +1641,7 @@
   <widget class="PyDMDrawingRectangle" name="PyDMDrawingRectangle">
    <property name="geometry">
     <rect>
-     <x>385</x>
+     <x>435</x>
      <y>230</y>
      <width>30</width>
      <height>10</height>
@@ -1657,7 +1657,7 @@
   <widget class="PyDMDrawingRectangle" name="PyDMDrawingRectangle_2">
    <property name="geometry">
     <rect>
-     <x>425</x>
+     <x>475</x>
      <y>230</y>
      <width>30</width>
      <height>10</height>
@@ -1673,7 +1673,7 @@
   <widget class="PyDMDrawingRectangle" name="PyDMDrawingRectangle_3">
    <property name="geometry">
     <rect>
-     <x>465</x>
+     <x>515</x>
      <y>230</y>
      <width>30</width>
      <height>10</height>
@@ -1689,7 +1689,7 @@
   <widget class="PyDMDrawingRectangle" name="PyDMDrawingRectangle_4">
    <property name="geometry">
     <rect>
-     <x>505</x>
+     <x>555</x>
      <y>230</y>
      <width>30</width>
      <height>10</height>
@@ -1705,7 +1705,7 @@
   <widget class="PyDMDrawingRectangle" name="PyDMDrawingRectangle_5">
    <property name="geometry">
     <rect>
-     <x>545</x>
+     <x>595</x>
      <y>230</y>
      <width>30</width>
      <height>10</height>
@@ -1721,7 +1721,7 @@
   <widget class="PyDMDrawingRectangle" name="PyDMDrawingRectangle_6">
    <property name="geometry">
     <rect>
-     <x>585</x>
+     <x>635</x>
      <y>230</y>
      <width>30</width>
      <height>10</height>
@@ -1737,7 +1737,7 @@
   <widget class="PyDMDrawingRectangle" name="PyDMDrawingRectangle_7">
    <property name="geometry">
     <rect>
-     <x>625</x>
+     <x>675</x>
      <y>230</y>
      <width>30</width>
      <height>10</height>
@@ -1753,7 +1753,7 @@
   <widget class="PyDMDrawingRectangle" name="PyDMDrawingRectangle_8">
    <property name="geometry">
     <rect>
-     <x>665</x>
+     <x>715</x>
      <y>230</y>
      <width>30</width>
      <height>10</height>
@@ -1769,7 +1769,7 @@
   <widget class="PyDMDrawingRectangle" name="PyDMDrawingRectangle_9">
    <property name="geometry">
     <rect>
-     <x>405</x>
+     <x>455</x>
      <y>110</y>
      <width>30</width>
      <height>10</height>
@@ -1785,7 +1785,7 @@
   <widget class="PyDMDrawingRectangle" name="PyDMDrawingRectangle_10">
    <property name="geometry">
     <rect>
-     <x>405</x>
+     <x>455</x>
      <y>110</y>
      <width>30</width>
      <height>10</height>
@@ -1801,7 +1801,7 @@
   <widget class="PyDMDrawingRectangle" name="PyDMDrawingRectangle_11">
    <property name="geometry">
     <rect>
-     <x>405</x>
+     <x>455</x>
      <y>110</y>
      <width>30</width>
      <height>10</height>
@@ -1817,7 +1817,7 @@
   <widget class="PyDMDrawingRectangle" name="PyDMDrawingRectangle_12">
    <property name="geometry">
     <rect>
-     <x>405</x>
+     <x>455</x>
      <y>110</y>
      <width>30</width>
      <height>10</height>
@@ -1833,7 +1833,7 @@
   <widget class="PyDMDrawingRectangle" name="PyDMDrawingRectangle_13">
    <property name="geometry">
     <rect>
-     <x>405</x>
+     <x>455</x>
      <y>110</y>
      <width>30</width>
      <height>10</height>
@@ -1849,7 +1849,7 @@
   <widget class="PyDMDrawingRectangle" name="PyDMDrawingRectangle_14">
    <property name="geometry">
     <rect>
-     <x>565</x>
+     <x>615</x>
      <y>110</y>
      <width>30</width>
      <height>10</height>
@@ -1865,7 +1865,7 @@
   <widget class="PyDMDrawingRectangle" name="PyDMDrawingRectangle_15">
    <property name="geometry">
     <rect>
-     <x>525</x>
+     <x>575</x>
      <y>110</y>
      <width>30</width>
      <height>10</height>
@@ -1881,7 +1881,7 @@
   <widget class="PyDMDrawingRectangle" name="PyDMDrawingRectangle_16">
    <property name="geometry">
     <rect>
-     <x>485</x>
+     <x>535</x>
      <y>110</y>
      <width>30</width>
      <height>10</height>
@@ -1897,7 +1897,7 @@
   <widget class="PyDMDrawingRectangle" name="PyDMDrawingRectangle_17">
    <property name="geometry">
     <rect>
-     <x>605</x>
+     <x>655</x>
      <y>110</y>
      <width>30</width>
      <height>10</height>
@@ -1913,7 +1913,7 @@
   <widget class="PyDMDrawingRectangle" name="PyDMDrawingRectangle_18">
    <property name="geometry">
     <rect>
-     <x>445</x>
+     <x>495</x>
      <y>110</y>
      <width>30</width>
      <height>10</height>
@@ -1929,7 +1929,7 @@
   <widget class="PyDMDrawingRectangle" name="PyDMDrawingRectangle_19">
    <property name="geometry">
     <rect>
-     <x>685</x>
+     <x>735</x>
      <y>110</y>
      <width>30</width>
      <height>10</height>
@@ -1945,7 +1945,7 @@
   <widget class="PyDMDrawingRectangle" name="PyDMDrawingRectangle_20">
    <property name="geometry">
     <rect>
-     <x>645</x>
+     <x>695</x>
      <y>110</y>
      <width>30</width>
      <height>10</height>
@@ -1958,10 +1958,10 @@
     <double>0.000000000000000</double>
    </property>
   </widget>
-  <widget class="PyDMDrawingRectangle" name="PyDMDrawingRectangle_21">
+  <widget class="PyDMDrawingRectangle" name="com_mp1_mr4">
    <property name="geometry">
     <rect>
-     <x>180</x>
+     <x>230</x>
      <y>60</y>
      <width>181</width>
      <height>41</height>
@@ -1974,10 +1974,10 @@
     <double>45.000000000000000</double>
    </property>
   </widget>
-  <widget class="PyDMDrawingRectangle" name="PyDMDrawingRectangle_22">
+  <widget class="PyDMDrawingRectangle" name="com_mp1_mr5">
    <property name="geometry">
     <rect>
-     <x>80</x>
+     <x>130</x>
      <y>130</y>
      <width>181</width>
      <height>41</height>
@@ -1990,10 +1990,10 @@
     <double>45.000000000000000</double>
    </property>
   </widget>
-  <widget class="PyDMDrawingRectangle" name="PyDMDrawingRectangle_23">
+  <widget class="PyDMDrawingRectangle" name="c">
    <property name="geometry">
     <rect>
-     <x>80</x>
+     <x>130</x>
      <y>250</y>
      <width>181</width>
      <height>41</height>
@@ -2006,7 +2006,7 @@
     <double>45.000000000000000</double>
    </property>
   </widget>
-  <widget class="PyDMDrawingCircle" name="PyDMDrawingCircle">
+  <widget class="PyDMDrawingCircle" name="com_dp1_tf1">
    <property name="geometry">
     <rect>
      <x>-35</x>
@@ -2032,10 +2032,10 @@
     <double>50.000000000000000</double>
    </property>
   </widget>
-  <widget class="PyDMDrawingRectangle" name="PyDMDrawingRectangle_24">
+  <widget class="PyDMDrawingRectangle" name="com_dp1_mr1">
    <property name="geometry">
     <rect>
-     <x>190</x>
+     <x>240</x>
      <y>200</y>
      <width>181</width>
      <height>41</height>
@@ -2048,7 +2048,7 @@
     <double>45.000000000000000</double>
    </property>
   </widget>
-  <widget class="PyDMDrawingRectangle" name="PyDMDrawingRectangle_25">
+  <widget class="PyDMDrawingRectangle" name="com_dp1_mr2">
    <property name="geometry">
     <rect>
      <x>-60</x>
@@ -2067,7 +2067,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_55">
    <property name="geometry">
     <rect>
-     <x>230</x>
+     <x>280</x>
      <y>145</y>
      <width>81</width>
      <height>81</height>
@@ -2098,7 +2098,7 @@
     <rect>
      <x>40</x>
      <y>190</y>
-     <width>231</width>
+     <width>281</width>
      <height>71</height>
     </rect>
    </property>
@@ -2151,10 +2151,10 @@
     <double>90.000000000000000</double>
    </property>
   </widget>
-  <widget class="PyDMDrawingRectangle" name="PyDMDrawingRectangle_27">
+  <widget class="PyDMDrawingRectangle" name="com_mp1_bs1">
    <property name="geometry">
     <rect>
-     <x>180</x>
+     <x>230</x>
      <y>130</y>
      <width>181</width>
      <height>41</height>
@@ -2167,10 +2167,10 @@
     <double>-45.000000000000000</double>
    </property>
   </widget>
-  <widget class="PyDMDrawingRectangle" name="PyDMDrawingRectangle_28">
+  <widget class="PyDMDrawingRectangle" name="com_mp1_wp1">
    <property name="geometry">
     <rect>
-     <x>120</x>
+     <x>170</x>
      <y>130</y>
      <width>181</width>
      <height>41</height>
@@ -2212,7 +2212,7 @@
     <double>0.000000000000000</double>
    </property>
   </widget>
-  <widget class="PyDMDrawingRectangle" name="PyDMDrawingRectangle_26">
+  <widget class="PyDMDrawingRectangle" name="com_mp1_bs2">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -2257,7 +2257,7 @@
     <double>90.000000000000000</double>
    </property>
   </widget>
-  <widget class="PyDMDrawingRectangle" name="PyDMDrawingRectangle_29">
+  <widget class="PyDMDrawingRectangle" name="com_dp2_mr1">
    <property name="geometry">
     <rect>
      <x>-60</x>
@@ -2273,7 +2273,7 @@
     <double>45.000000000000000</double>
    </property>
   </widget>
-  <widget class="PyDMDrawingCircle" name="PyDMDrawingCircle_2">
+  <widget class="PyDMDrawingCircle" name="com_dp2_tf1">
    <property name="geometry">
     <rect>
      <x>-40</x>
@@ -2302,7 +2302,7 @@
   <widget class="PyDMDrawingRectangle" name="PyDMDrawingRectangle_30">
    <property name="geometry">
     <rect>
-     <x>880</x>
+     <x>930</x>
      <y>610</y>
      <width>101</width>
      <height>21</height>
@@ -2318,7 +2318,7 @@
   <widget class="PyDMDrawingLine" name="PyDMDrawingLine_60">
    <property name="geometry">
     <rect>
-     <x>560</x>
+     <x>610</x>
      <y>430</y>
      <width>261</width>
      <height>201</height>
@@ -2329,6 +2329,472 @@
    </property>
    <property name="penWidth" stdset="0">
     <double>20.000000000000000</double>
+   </property>
+   <property name="rotation" stdset="0">
+    <double>90.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="PyDMDrawingRectangle" name="pyDMDrawingRectangle">
+   <property name="geometry">
+    <rect>
+     <x>870</x>
+     <y>60</y>
+     <width>181</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="rotation" stdset="0">
+    <double>45.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="PyDMDrawingRectangle" name="PyDMDrawingRectangle_32">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>120</y>
+     <width>181</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="rotation" stdset="0">
+    <double>-45.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="PyDMDrawingRectangle" name="PyDMDrawingRectangle_33">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>325</y>
+     <width>181</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="rotation" stdset="0">
+    <double>-45.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="PyDMDrawingRectangle" name="com_mp2_bs2">
+   <property name="geometry">
+    <rect>
+     <x>920</x>
+     <y>370</y>
+     <width>181</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="rotation" stdset="0">
+    <double>-45.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="PyDMDrawingRectangle" name="com_mp2_mr8">
+   <property name="geometry">
+    <rect>
+     <x>925</x>
+     <y>420</y>
+     <width>181</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="rotation" stdset="0">
+    <double>45.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="PyDMDrawingRectangle" name="com_mp1_mr3">
+   <property name="geometry">
+    <rect>
+     <x>920</x>
+     <y>300</y>
+     <width>181</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="rotation" stdset="0">
+    <double>45.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="PyDMDrawingLine" name="PyDMDrawingLine_61">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>140</y>
+     <width>320</width>
+     <height>201</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="penWidth" stdset="0">
+    <double>10.000000000000000</double>
+   </property>
+   <property name="rotation" stdset="0">
+    <double>0.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="PyDMDrawingLine" name="PyDMDrawingLine_62">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>10</y>
+     <width>320</width>
+     <height>201</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="penWidth" stdset="0">
+    <double>10.000000000000000</double>
+   </property>
+   <property name="rotation" stdset="0">
+    <double>0.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="PyDMDrawingLine" name="PyDMDrawingLine_63">
+   <property name="geometry">
+    <rect>
+     <x>740</x>
+     <y>260</y>
+     <width>121</width>
+     <height>161</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="penWidth" stdset="0">
+    <double>20.000000000000000</double>
+   </property>
+   <property name="rotation" stdset="0">
+    <double>70.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="PyDMDrawingLine" name="PyDMDrawingLine_64">
+   <property name="geometry">
+    <rect>
+     <x>820</x>
+     <y>260</y>
+     <width>121</width>
+     <height>161</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="penWidth" stdset="0">
+    <double>20.000000000000000</double>
+   </property>
+   <property name="rotation" stdset="0">
+    <double>-70.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="PyDMDrawingLine" name="PyDMDrawingLine_65">
+   <property name="geometry">
+    <rect>
+     <x>820</x>
+     <y>290</y>
+     <width>41</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="penColor" stdset="0">
+    <color>
+     <red>170</red>
+     <green>0</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="penWidth" stdset="0">
+    <double>3.000000000000000</double>
+   </property>
+   <property name="rotation" stdset="0">
+    <double>10.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="PyDMDrawingLine" name="PyDMDrawingLine_66">
+   <property name="geometry">
+    <rect>
+     <x>820</x>
+     <y>300</y>
+     <width>41</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="penColor" stdset="0">
+    <color>
+     <red>170</red>
+     <green>0</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="penWidth" stdset="0">
+    <double>3.000000000000000</double>
+   </property>
+   <property name="rotation" stdset="0">
+    <double>0.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="PyDMDrawingLine" name="PyDMDrawingLine_67">
+   <property name="geometry">
+    <rect>
+     <x>820</x>
+     <y>300</y>
+     <width>51</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="penColor" stdset="0">
+    <color>
+     <red>170</red>
+     <green>0</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="penWidth" stdset="0">
+    <double>3.000000000000000</double>
+   </property>
+   <property name="rotation" stdset="0">
+    <double>-20.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="PyDMDrawingLine" name="PyDMDrawingLine_68">
+   <property name="geometry">
+    <rect>
+     <x>820</x>
+     <y>300</y>
+     <width>51</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="penColor" stdset="0">
+    <color>
+     <red>170</red>
+     <green>0</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="penWidth" stdset="0">
+    <double>3.000000000000000</double>
+   </property>
+   <property name="rotation" stdset="0">
+    <double>-10.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="PyDMDrawingLine" name="PyDMDrawingLine_69">
+   <property name="geometry">
+    <rect>
+     <x>810</x>
+     <y>310</y>
+     <width>61</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="penColor" stdset="0">
+    <color>
+     <red>170</red>
+     <green>0</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="penWidth" stdset="0">
+    <double>3.000000000000000</double>
+   </property>
+   <property name="rotation" stdset="0">
+    <double>-5.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="PyDMDrawingLine" name="PyDMDrawingLine_70">
+   <property name="geometry">
+    <rect>
+     <x>810</x>
+     <y>305</y>
+     <width>61</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="penColor" stdset="0">
+    <color>
+     <red>170</red>
+     <green>0</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="penWidth" stdset="0">
+    <double>3.000000000000000</double>
+   </property>
+   <property name="rotation" stdset="0">
+    <double>0.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="PyDMDrawingRectangle" name="com_mp1_mr2">
+   <property name="geometry">
+    <rect>
+     <x>730</x>
+     <y>60</y>
+     <width>231</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="rotation" stdset="0">
+    <double>90.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="PyDMDrawingLine" name="PyDMDrawingLine_71">
+   <property name="geometry">
+    <rect>
+     <x>940</x>
+     <y>190</y>
+     <width>141</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="penStyle" stdset="0">
+    <enum>Qt::DashLine</enum>
+   </property>
+   <property name="penColor" stdset="0">
+    <color>
+     <red>170</red>
+     <green>0</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="penWidth" stdset="0">
+    <double>4.000000000000000</double>
+   </property>
+   <property name="rotation" stdset="0">
+    <double>90.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="PyDMDrawingCircle" name="com_dp3_tf1">
+   <property name="geometry">
+    <rect>
+     <x>940</x>
+     <y>120</y>
+     <width>141</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="penStyle" stdset="0">
+    <enum>Qt::SolidLine</enum>
+   </property>
+   <property name="penColor" stdset="0">
+    <color>
+     <red>153</red>
+     <green>153</green>
+     <blue>153</blue>
+    </color>
+   </property>
+   <property name="penWidth" stdset="0">
+    <double>50.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="PyDMDrawingLine" name="PyDMDrawingLine_72">
+   <property name="geometry">
+    <rect>
+     <x>860</x>
+     <y>460</y>
+     <width>261</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="penWidth" stdset="0">
+    <double>20.000000000000000</double>
+   </property>
+   <property name="rotation" stdset="0">
+    <double>90.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="PyDMDrawingRectangle" name="com_dp2_xtl1">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>310</y>
+     <width>181</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="rotation" stdset="0">
+    <double>90.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="PyDMDrawingRectangle" name="com_dp2_mr6">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>310</y>
+     <width>181</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="rotation" stdset="0">
+    <double>-45.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="PyDMDrawingRectangle" name="com_mp1_mr3_2">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>60</y>
+     <width>231</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string/>
    </property>
    <property name="rotation" stdset="0">
     <double>90.000000000000000</double>

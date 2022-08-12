@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1260</width>
-    <height>597</height>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -544,32 +544,6 @@
     <double>-45.000000000000000</double>
    </property>
   </widget>
-  <widget class="PyDMDrawingCircle" name="PyDMDrawingCircle">
-   <property name="geometry">
-    <rect>
-     <x>650</x>
-     <y>260</y>
-     <width>101</width>
-     <height>101</height>
-    </rect>
-   </property>
-   <property name="toolTip">
-    <string/>
-   </property>
-   <property name="penStyle" stdset="0">
-    <enum>Qt::DotLine</enum>
-   </property>
-   <property name="penColor" stdset="0">
-    <color>
-     <red>153</red>
-     <green>153</green>
-     <blue>153</blue>
-    </color>
-   </property>
-   <property name="penWidth" stdset="0">
-    <double>50.000000000000000</double>
-   </property>
-  </widget>
   <widget class="PyDMDrawingRectangle" name="PyDMDrawingRectangle_16">
    <property name="geometry">
     <rect>
@@ -740,32 +714,6 @@
     <double>0.000000000000000</double>
    </property>
   </widget>
-  <widget class="PyDMDrawingCircle" name="PyDMDrawingCircle_2">
-   <property name="geometry">
-    <rect>
-     <x>780</x>
-     <y>130</y>
-     <width>101</width>
-     <height>101</height>
-    </rect>
-   </property>
-   <property name="toolTip">
-    <string/>
-   </property>
-   <property name="penStyle" stdset="0">
-    <enum>Qt::DotLine</enum>
-   </property>
-   <property name="penColor" stdset="0">
-    <color>
-     <red>153</red>
-     <green>153</green>
-     <blue>153</blue>
-    </color>
-   </property>
-   <property name="penWidth" stdset="0">
-    <double>50.000000000000000</double>
-   </property>
-  </widget>
   <widget class="PyDMDrawingPolygon" name="HAR_MP1_PC1">
    <property name="geometry">
     <rect>
@@ -851,8 +799,8 @@
     <rect>
      <x>30</x>
      <y>480</y>
-     <width>111</width>
-     <height>21</height>
+     <width>110</width>
+     <height>20</height>
     </rect>
    </property>
    <property name="text">
@@ -880,50 +828,6 @@
    <property name="loadWhenShown" stdset="0">
     <bool>false</bool>
    </property>
-  </widget>
-  <widget class="QWidget" name="verticalLayoutWidget_2">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>490</y>
-     <width>109</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="HMR_MP3_MR1_button">
-    <property name="spacing">
-     <number>0</number>
-    </property>
-    <item>
-     <widget class="QPushButton" name="MP3_MR1_Bypass">
-      <property name="text">
-       <string>Bypass</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="MP3_MR1_800">
-      <property name="text">
-       <string>800</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="TyphosRelatedSuiteButton" name="MP3_MR1_expert">
-      <property name="toolTip">
-       <string/>
-      </property>
-      <property name="text">
-       <string>MP3 MR1 expert</string>
-      </property>
-      <property name="happi_names" stdset="0">
-       <stringlist>
-        <string>lm1k4_hrm_mp3_mr1</string>
-       </stringlist>
-      </property>
-     </widget>
-    </item>
-   </layout>
   </widget>
   <widget class="QWidget" name="verticalLayoutWidget_3">
    <property name="geometry">
@@ -1033,7 +937,7 @@
     <rect>
      <x>340</x>
      <y>400</y>
-     <width>117</width>
+     <width>150</width>
      <height>48</height>
     </rect>
    </property>
@@ -1057,12 +961,12 @@
      </widget>
     </item>
     <item>
-     <widget class="TyphosRelatedSuiteButton" name="MP1_PC1_expert_2">
+     <widget class="TyphosRelatedSuiteButton" name="MP1_PC1_PZM2_expert">
       <property name="toolTip">
        <string/>
       </property>
       <property name="text">
-       <string>MP1 PC1 expert 2</string>
+       <string>MP1 PC1 PZM2 expert</string>
       </property>
       <property name="happi_names" stdset="0">
        <stringlist>
@@ -1077,7 +981,7 @@
    <property name="geometry">
     <rect>
      <x>370</x>
-     <y>10</y>
+     <y>-1</y>
      <width>151</width>
      <height>23</height>
     </rect>
@@ -1093,7 +997,7 @@
    <property name="geometry">
     <rect>
      <x>250</x>
-     <y>10</y>
+     <y>-1</y>
      <width>121</width>
      <height>23</height>
     </rect>
@@ -1112,8 +1016,8 @@
    <property name="geometry">
     <rect>
      <x>300</x>
-     <y>11</y>
-     <width>61</width>
+     <y>0</y>
+     <width>71</width>
      <height>20</height>
     </rect>
    </property>
@@ -1140,14 +1044,14 @@ background-color: rgb(255, 255, 255);</string>
     <bool>true</bool>
    </property>
    <property name="channel" stdset="0">
-    <string>ca://LM1K4:INJ_BHC:TEMP</string>
+    <string>ca://LM1K4:HRM_BHC_AI_01:3.VAL</string>
    </property>
   </widget>
   <widget class="PyDMLineEdit" name="Humidity">
    <property name="geometry">
     <rect>
      <x>520</x>
-     <y>10</y>
+     <y>-1</y>
      <width>151</width>
      <height>23</height>
     </rect>
@@ -1163,7 +1067,7 @@ background-color: rgb(255, 255, 255);</string>
    <property name="geometry">
     <rect>
      <x>250</x>
-     <y>10</y>
+     <y>-1</y>
      <width>51</width>
      <height>21</height>
     </rect>
@@ -1179,7 +1083,7 @@ background-color: rgb(255, 255, 255);</string>
    <property name="geometry">
     <rect>
      <x>520</x>
-     <y>10</y>
+     <y>-1</y>
      <width>71</width>
      <height>21</height>
     </rect>
@@ -1195,7 +1099,7 @@ background-color: rgb(255, 255, 255);</string>
    <property name="geometry">
     <rect>
      <x>370</x>
-     <y>10</y>
+     <y>-1</y>
      <width>71</width>
      <height>21</height>
     </rect>
@@ -1295,7 +1199,7 @@ background-color: rgb(255, 255, 255);</string>
     <rect>
      <x>770</x>
      <y>490</y>
-     <width>151</width>
+     <width>150</width>
      <height>55</height>
     </rect>
    </property>
@@ -1409,10 +1313,10 @@ background-color: rgb(255, 255, 255);</string>
   <widget class="QWidget" name="verticalLayoutWidget_7">
    <property name="geometry">
     <rect>
-     <x>920</x>
-     <y>466</y>
-     <width>109</width>
-     <height>117</height>
+     <x>1030</x>
+     <y>490</y>
+     <width>101</width>
+     <height>71</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="HRM_MP3_MR2_button">
@@ -1437,36 +1341,6 @@ background-color: rgb(255, 255, 255);</string>
      <widget class="QPushButton" name="MP3_MR2_800">
       <property name="text">
        <string>800</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="TyphosRelatedSuiteButton" name="MP3_MR2_expert">
-      <property name="toolTip">
-       <string/>
-      </property>
-      <property name="text">
-       <string>MP3 MR2 expert</string>
-      </property>
-      <property name="happi_names" stdset="0">
-       <stringlist>
-        <string>lm1k4_hrm_mp3_mr2</string>
-       </stringlist>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="TyphosRelatedSuiteButton" name="MP3_MR2_LM1_expert">
-      <property name="toolTip">
-       <string/>
-      </property>
-      <property name="text">
-       <string>MP3 MR2 LM1</string>
-      </property>
-      <property name="happi_names" stdset="0">
-       <stringlist>
-        <string>lm1k4_hrm_mp3_mr2_lm1</string>
-       </stringlist>
       </property>
      </widget>
     </item>
@@ -1573,7 +1447,7 @@ background-color: rgb(255, 255, 255);</string>
    <property name="geometry">
     <rect>
      <x>671</x>
-     <y>10</y>
+     <y>-1</y>
      <width>101</width>
      <height>23</height>
     </rect>
@@ -1594,7 +1468,7 @@ background-color: rgb(255, 255, 255);</string>
    <property name="geometry">
     <rect>
      <x>430</x>
-     <y>11</y>
+     <y>0</y>
      <width>85</width>
      <height>20</height>
     </rect>
@@ -1605,6 +1479,9 @@ background-color: rgb(255, 255, 255);</string>
    <property name="styleSheet">
     <string notr="true">border-radius:20px;
 background-color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>-68.497 Torr</string>
    </property>
    <property name="precision" stdset="0">
     <number>3</number>
@@ -1629,7 +1506,7 @@ background-color: rgb(255, 255, 255);</string>
    <property name="geometry">
     <rect>
      <x>585</x>
-     <y>11</y>
+     <y>0</y>
      <width>81</width>
      <height>20</height>
     </rect>
@@ -1640,6 +1517,9 @@ background-color: rgb(255, 255, 255);</string>
    <property name="styleSheet">
     <string notr="true">border-radius:20px;
 background-color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>-8.830 %RH</string>
    </property>
    <property name="precision" stdset="0">
     <number>3</number>
@@ -1882,7 +1762,7 @@ background-color: rgb(255, 255, 255);</string>
     <string/>
    </property>
   </widget>
-  <widget class="TyphosRelatedSuiteButton" name="INJ_DP1_FF_expert_2">
+  <widget class="TyphosRelatedSuiteButton" name="HRM_DP1_FF_expert">
    <property name="geometry">
     <rect>
      <x>730</x>
@@ -2069,7 +1949,7 @@ background-color: rgb(255, 255, 255);</string>
     <string> NF</string>
    </property>
   </widget>
-  <widget class="TyphosRelatedSuiteButton" name="INJ_DP1_NF_expert">
+  <widget class="TyphosRelatedSuiteButton" name="HRM_DP1_NF_expert">
    <property name="geometry">
     <rect>
      <x>730</x>
@@ -2739,7 +2619,7 @@ background-color: rgb(255, 255, 255);</string>
     </stringlist>
    </property>
   </widget>
-  <widget class="TyphosRelatedSuiteButton" name="HRM_DP2_SL_expert_2">
+  <widget class="TyphosRelatedSuiteButton" name="HRM_DP1_SL_expert">
    <property name="geometry">
     <rect>
      <x>730</x>
@@ -2752,7 +2632,7 @@ background-color: rgb(255, 255, 255);</string>
     <string/>
    </property>
    <property name="text">
-    <string>DP2 SL Expert</string>
+    <string>DP1 SL Expert</string>
    </property>
    <property name="happi_names" stdset="0">
     <stringlist>
@@ -2828,6 +2708,121 @@ background-color: rgb(255, 255, 255);</string>
    </property>
    <property name="channel" stdset="0">
     <string>ca://LM1K4:HRM_DP2_TF1_SP1:STDEV</string>
+   </property>
+  </widget>
+  <widget class="TyphosRelatedSuiteButton" name="MP3_MR2_expert">
+   <property name="geometry">
+    <rect>
+     <x>920</x>
+     <y>490</y>
+     <width>110</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="text">
+    <string>MP3 MR2 expert</string>
+   </property>
+   <property name="happi_names" stdset="0">
+    <stringlist>
+     <string>lm1k4_hrm_mp3_mr2</string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="TyphosRelatedSuiteButton" name="MP3_MR2_LM1_expert">
+   <property name="geometry">
+    <rect>
+     <x>920</x>
+     <y>510</y>
+     <width>110</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="text">
+    <string>MP3 MR2 LM1</string>
+   </property>
+   <property name="happi_names" stdset="0">
+    <stringlist>
+     <string>lm1k4_hrm_mp3_mr2_lm1</string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="PyDMDrawingCircle" name="hrm_dp1">
+   <property name="geometry">
+    <rect>
+     <x>630</x>
+     <y>249</y>
+     <width>141</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="penStyle" stdset="0">
+    <enum>Qt::SolidLine</enum>
+   </property>
+   <property name="penColor" stdset="0">
+    <color>
+     <red>153</red>
+     <green>153</green>
+     <blue>153</blue>
+    </color>
+   </property>
+   <property name="penWidth" stdset="0">
+    <double>50.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="PyDMDrawingCircle" name="hrm_dp2">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>119</y>
+     <width>141</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="penStyle" stdset="0">
+    <enum>Qt::SolidLine</enum>
+   </property>
+   <property name="penColor" stdset="0">
+    <color>
+     <red>153</red>
+     <green>153</green>
+     <blue>153</blue>
+    </color>
+   </property>
+   <property name="penWidth" stdset="0">
+    <double>50.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="TyphosRelatedSuiteButton" name="MP3_MR1_expert">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>460</y>
+     <width>110</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="text">
+    <string>MP3 MR1 expert</string>
+   </property>
+   <property name="happi_names" stdset="0">
+    <stringlist>
+     <string>lm1k4_hrm_mp3_mr1</string>
+    </stringlist>
    </property>
   </widget>
  </widget>
